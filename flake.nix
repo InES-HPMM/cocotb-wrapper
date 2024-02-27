@@ -1,0 +1,43 @@
+{
+  description = "A wrapper around cocotb that facilitates using cocotb";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    poetry2nix = {
+      url = "github:nix-community/poetry2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = inputs@{ flake-parts, poetry2nix, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+      perSystem = { config, pkgs, ... }:
+        let
+          inherit (poetry2nix.lib.mkPoetry2Nix { inherit pkgs; }) mkPoetryApplication;
+        in
+        {
+          formatter = pkgs.nixpkgs-fmt;
+          packages = {
+            iaia = mkPoetryApplication {
+              projectDir = ./.;
+              preferWheels = true;
+            };
+            default = config.packages.iaia;
+          };
+          devShells = {
+            default = pkgs.mkShell {
+              name = "cocotb-wrapper";
+              inputsFrom = [ config.packages.iaia ];
+              packages = with pkgs; [ nodejs poetry ];
+              LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+            };
+          };
+        };
+    };
+}
