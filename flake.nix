@@ -24,16 +24,16 @@
         {
           formatter = pkgs.nixpkgs-fmt;
           packages = {
-            iaia = mkPoetryApplication {
+            cocotb-wrapper = mkPoetryApplication {
               projectDir = ./.;
               preferWheels = true;
             };
-            default = config.packages.iaia;
+            default = config.packages.cocotb-wrapper;
           };
           devShells = {
             default = pkgs.mkShell {
               name = "cocotb-wrapper";
-              inputsFrom = [ config.packages.iaia ];
+              inputsFrom = [ config.packages.cocotb-wrapper ];
               packages = with pkgs; [ nodejs poetry ];
               LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
             };

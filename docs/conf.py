@@ -141,7 +141,7 @@ html_logo = "_static/zhaw_logo_only.svg"
 html_css_files = ["css/custom.css"]
 html_static_path = ["_static"]
 
-htmlhelp_basename = "iaia"
+htmlhelp_basename = "cocotb-wrapper"
 # -- Options for Latex output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-latex-output
 
