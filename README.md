@@ -4,6 +4,10 @@
 the use of `cocotb.test()`. Additionally, this module also contains a wrapper
 around `cocotbext-axi`.
 
+## Documentation
+
+A little more detailed documentation is available [here](https://github.zhaw.ch/pages/hpmm/cocotb-wrapper/).
+
 ## Writing tests using `Testbench`
 
 First, import the wrapper module with
