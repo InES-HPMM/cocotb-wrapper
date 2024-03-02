@@ -43,6 +43,7 @@ sphinx-togglebutton = "^0.3.2"
 sphinxcontrib-bibtex = "^2.6.1"
 sphinxcontrib-katex = "^0.9.9"
 sphinxcontrib-makedomain = "^0.1.1"
+toml = "^0.10.2"
 
 [tool.poetry.group.dev]
 optional = true

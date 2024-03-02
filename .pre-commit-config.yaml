@@ -38,6 +38,8 @@ repos:
       - id: poetry-lock
       - id: poetry-export
         args: ["-o", "requirements.txt"]
+      - id: poetry-export
+        args: ["--with", "docs", "-o", "docs/requirements.txt"]
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v4.0.0-alpha.8
     hooks:
