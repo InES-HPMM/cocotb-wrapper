@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Assert PR target is main
-        if: github.event_name == 'pull_request' && github.repository == 'deaa/cocotb-wrapper'
+        if: github.event_name == 'pull_request' && github.repository == 'hpmm/cocotb-wrapper'
         run: |
           if [ "$GITHUB_BASE_REF" != "main" ]; then
             echo "::error::PR targeting '$GITHUB_BASE_REF', please refile targeting 'main'." && exit 1

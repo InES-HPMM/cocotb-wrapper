@@ -6,7 +6,7 @@ license = "MIT"
 authors = ["Thierry Delafontaine <deaa@zhaw.ch>"]
 maintainers = ["Thierry Delafontaine <deaa@zhaw.ch>"]
 readme = "README.md"
-repository = "https://github.zhaw.ch/deaa/cocotb-wrapper"
+repository = "https://github.zhaw.ch/hpmm/cocotb-wrapper"
 keywords = [
   "fpga",
   "vhdl",
