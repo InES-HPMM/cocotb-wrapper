@@ -45,7 +45,7 @@ class AxiBurstType(IntEnum):
     FIXED = 0b00
     """A fixed size burst.
 
-    In a fixed size burst :footcite:`AmbaAxiAndAcArmLimited2021`
+    In a fixed size burst.
 
     * The address is the same for every transfer in the burst.
     * The byte lanes that are valid are constant for all beats in the burst.
@@ -59,7 +59,7 @@ class AxiBurstType(IntEnum):
     increment of the address for the previous transfer. The inceremnnt value
     depends on the size of the transfer. For example, for an aligned start
     address, the address for each trasnfer in a burst with a size of 4 bytes is
-    the previous address plus four. :footcite:`AmbaAxiAndAcArmLimited2021`
+    the previous address plus four.
     """
 
     WRAP = 0b10
@@ -90,7 +90,6 @@ class AxiBurstType(IntEnum):
       higher than the wrap boundary.
 
     This burst type is used for cache line accesses.
-    :footcite:`AmbaAxiAndAcArmLimited2021`
     """
 
 
@@ -98,7 +97,7 @@ class AxiBurstSize(IntEnum):
     """The number of bytes in each data transfer in a write transaction.
 
     The burst size must be a power of 2, that is 1, 2, 4, 8, 16, 32, 64, or 128
-    bytes. :footcite:`AmbaAxiAndAcArmLimited2021`
+    bytes.
     """
 
     SIZE_1 = 0b000
@@ -124,7 +123,6 @@ class AxiLockType(IntEnum):
 
     AXI4 does not support locked transactions. In AXI3 the **AxLOCK** signals
     specify normal, exclusive, and locked accesses.
-    :footcite:`AmbaAxiAndAcArmLimited2021`
     """
 
     NORMAL = 0b0
@@ -137,7 +135,7 @@ class AxiCacheBit(IntFlag):
     """The different bits of the **AxCACHE** attribute.
 
     The **AxCACHE** signals specify the Bufferabel, Modifiable, and Allocate
-    attributes of the transaction. :footcite:`AmbaAxiAndAcArmLimited2021`
+    attributes of the transaction.
     """
 
     B = 0b0001
@@ -145,27 +143,26 @@ class AxiCacheBit(IntFlag):
 
     When this bit is asserted, the interconnect, or any component, can delay the
     transaction reaching its final destination for any number of cycles.
-    :footcite:`AmbaAxiAndAcArmLimited2021`
     """
     M = 0b0010
     """Modifiable bit.
 
     When this bit is asserted the characteristics of the transaction can be
-    modified. :footcite:`AmbaAxiAndAcArmLimited2021`
+    modified.
     """
     RA = 0b0100
     """Read-Allocate bit.
 
     When this bit is asserted, read allocation of the transaction is recomended
     but is not mandatory. The `RA` bit must be asserted if the `M` bit
-    deasserted. :footcite:`AmbaAxiAndAcArmLimited2021`
+    deasserted.
     """
     WA = 0b1000
     """Write-Allocate bit.
 
     When this bit is asserted, write allocation of the transaction is recomended
     but is not mandatory. The `WA` bit must be asserted if the `M` bit
-    deasserted. :footcite:`AmbaAxiAndAcArmLimited2021`
+    deasserted.
     """
 
 
@@ -190,27 +187,25 @@ class AxiResp(IntEnum):
     """Normal access success.
 
     Indicates that a normal access has been successful. Can laso indicate theat
-    an aexclusie access has failed. :footcite:`AmbaAxiAndAcArmLimited2021`
+    an aexclusie access has failed.
     """
     EXOKAY = 0b01
     """Exclusive access okay.
 
     Indicates that a either the read or write access of an exclusive access has
-    been successful. :footcite:`AmbaAxiAndAcArmLimited2021`
+    been successful.
     """
     SLVERR = 0b10
     """Subordinate error.
 
     Used when the access has reached the Subordinate successfully, but the
     Subordinate wishes to return an error condition to the originating Manager.
-    :footcite:`AmbaAxiAndAcArmLimited2021`
     """
     DECERR = 0b11
     """Decode error.
 
     Generated, typically by an interconnect component, to indicate that there is
     no Subordinate at the transaction address.
-    :footcite:`AmbaAxiAndAcArmLimited2021`
     """
 
 
