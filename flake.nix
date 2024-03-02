@@ -34,7 +34,7 @@
             default = pkgs.mkShell {
               name = "cocotb-wrapper";
               inputsFrom = [ config.packages.cocotb-wrapper ];
-              packages = with pkgs; [ nodejs poetry ];
+              packages = with pkgs; [ nodejs poetry poetryPlugins.poetry-plugin-export ];
               LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
             };
           };

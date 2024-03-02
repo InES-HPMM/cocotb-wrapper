@@ -2,6 +2,7 @@
 
 ### Fix
 
+- add poetry-plugin-export
 - format
 - remove names from old repo
 - remove footnote citations
