@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiLiteRam.write
+====================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiLiteRam.write

@@ -1,0 +1,6 @@
+cocotb\_wrapper.testbench.Testbench.start\_clk
+==============================================
+
+.. currentmodule:: cocotb_wrapper.testbench
+
+.. automethod:: Testbench.start_clk

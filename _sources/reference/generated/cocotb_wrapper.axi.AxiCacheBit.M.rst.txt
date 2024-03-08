@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiCacheBit.M
+=================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiCacheBit.M

@@ -1,0 +1,26 @@
+﻿cocotb\_wrapper.axi.AxiResp
+===========================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: AxiResp
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ~AxiResp.OKAY
+      ~AxiResp.EXOKAY
+      ~AxiResp.SLVERR
+      ~AxiResp.DECERR
+   
+   

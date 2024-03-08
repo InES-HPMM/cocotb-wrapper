@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiRam.enable
+=================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiRam.enable

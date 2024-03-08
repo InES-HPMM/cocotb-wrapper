@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiBurstType.WRAP
+=====================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiBurstType.WRAP

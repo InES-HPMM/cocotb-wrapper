@@ -1,0 +1,831 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; cocotb-wrapper v1.1 Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/katex-math.css?v=91adb8b6" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=def9ab29"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/zhaw_logo_only.svg" class="logo__image only-light" alt="cocotb-wrapper v1.1 Manual - Home"/>
+    <script>document.write(`<img src="_static/zhaw_logo_only.svg" class="logo__image only-dark" alt="cocotb-wrapper v1.1 Manual - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="reference/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="dev/index.html">
+                        Development
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="release.html">
+                        Release notes
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/InES-HPMM/cocotb-wrapper" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://blog.zhaw.ch/high-performance/" title="ZHAW InES HPMM Blog" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/zhaw_logo_only.svg" class="icon-link-image" alt="ZHAW InES HPMM Blog"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="reference/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="dev/index.html">
+                        Development
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="release.html">
+                        Release notes
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/InES-HPMM/cocotb-wrapper" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://blog.zhaw.ch/high-performance/" title="ZHAW InES HPMM Blog" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/zhaw_logo_only.svg" class="icon-link-image" alt="ZHAW InES HPMM Blog"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+</form></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstSize.html#cocotb_wrapper.axi.AxiBurstSize.__init__">__init__() (cocotb_wrapper.axi.AxiBurstSize method)</a>
+
+      <ul>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstType.html#cocotb_wrapper.axi.AxiBurstType.__init__">(cocotb_wrapper.axi.AxiBurstType method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiCacheBit.html#cocotb_wrapper.axi.AxiCacheBit.__init__">(cocotb_wrapper.axi.AxiCacheBit method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteMaster.html#cocotb_wrapper.axi.AxiLiteMaster.__init__">(cocotb_wrapper.axi.AxiLiteMaster method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteRam.html#cocotb_wrapper.axi.AxiLiteRam.__init__">(cocotb_wrapper.axi.AxiLiteRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiLockType.html#cocotb_wrapper.axi.AxiLockType.__init__">(cocotb_wrapper.axi.AxiLockType method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiMaster.html#cocotb_wrapper.axi.AxiMaster.__init__">(cocotb_wrapper.axi.AxiMaster method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiProt.html#cocotb_wrapper.axi.AxiProt.__init__">(cocotb_wrapper.axi.AxiProt method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiRam.html#cocotb_wrapper.axi.AxiRam.__init__">(cocotb_wrapper.axi.AxiRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiResp.html#cocotb_wrapper.axi.AxiResp.__init__">(cocotb_wrapper.axi.AxiResp method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSink.html#cocotb_wrapper.axi.AxiStreamSink.__init__">(cocotb_wrapper.axi.AxiStreamSink method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSource.html#cocotb_wrapper.axi.AxiStreamSource.__init__">(cocotb_wrapper.axi.AxiStreamSource method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.html#cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.__init__">(cocotb_wrapper.axi.RandomAxiLitePayloadGenerator method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.RandomAxiPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiPayloadGenerator.__init__">(cocotb_wrapper.axi.RandomAxiPayloadGenerator method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.__init__">(cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.testbench._Test.html#cocotb_wrapper.testbench._Test.__init__">(cocotb_wrapper.testbench._Test method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.testbench.Testbench.html#cocotb_wrapper.testbench.Testbench.__init__">(cocotb_wrapper.testbench.Testbench method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.testbench._Test.html#cocotb_wrapper.testbench._Test">_Test (class in cocotb_wrapper.testbench)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstSize.html#cocotb_wrapper.axi.AxiBurstSize">AxiBurstSize (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstType.html#cocotb_wrapper.axi.AxiBurstType">AxiBurstType (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiCacheBit.html#cocotb_wrapper.axi.AxiCacheBit">AxiCacheBit (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteMaster.html#cocotb_wrapper.axi.AxiLiteMaster">AxiLiteMaster (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteRam.html#cocotb_wrapper.axi.AxiLiteRam">AxiLiteRam (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLockType.html#cocotb_wrapper.axi.AxiLockType">AxiLockType (class in cocotb_wrapper.axi)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiMaster.html#cocotb_wrapper.axi.AxiMaster">AxiMaster (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiProt.html#cocotb_wrapper.axi.AxiProt">AxiProt (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiRam.html#cocotb_wrapper.axi.AxiRam">AxiRam (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiResp.html#cocotb_wrapper.axi.AxiResp">AxiResp (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSink.html#cocotb_wrapper.axi.AxiStreamSink">AxiStreamSink (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSource.html#cocotb_wrapper.axi.AxiStreamSource">AxiStreamSource (class in cocotb_wrapper.axi)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiCacheBit.B.html#cocotb_wrapper.axi.AxiCacheBit.B">B (cocotb_wrapper.axi.AxiCacheBit attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiResp.DECERR.html#cocotb_wrapper.axi.AxiResp.DECERR">DECERR (cocotb_wrapper.axi.AxiResp attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteMaster.disable.html#cocotb_wrapper.axi.AxiLiteMaster.disable">disable() (cocotb_wrapper.axi.AxiLiteMaster method)</a>
+
+      <ul>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteRam.disable.html#cocotb_wrapper.axi.AxiLiteRam.disable">(cocotb_wrapper.axi.AxiLiteRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiMaster.disable.html#cocotb_wrapper.axi.AxiMaster.disable">(cocotb_wrapper.axi.AxiMaster method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiRam.disable.html#cocotb_wrapper.axi.AxiRam.disable">(cocotb_wrapper.axi.AxiRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSink.disable.html#cocotb_wrapper.axi.AxiStreamSink.disable">(cocotb_wrapper.axi.AxiStreamSink method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSource.disable.html#cocotb_wrapper.axi.AxiStreamSource.disable">(cocotb_wrapper.axi.AxiStreamSource method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteMaster.enable.html#cocotb_wrapper.axi.AxiLiteMaster.enable">enable() (cocotb_wrapper.axi.AxiLiteMaster method)</a>
+
+      <ul>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteRam.enable.html#cocotb_wrapper.axi.AxiLiteRam.enable">(cocotb_wrapper.axi.AxiLiteRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiMaster.enable.html#cocotb_wrapper.axi.AxiMaster.enable">(cocotb_wrapper.axi.AxiMaster method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiRam.enable.html#cocotb_wrapper.axi.AxiRam.enable">(cocotb_wrapper.axi.AxiRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSink.enable.html#cocotb_wrapper.axi.AxiStreamSink.enable">(cocotb_wrapper.axi.AxiStreamSink method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSource.enable.html#cocotb_wrapper.axi.AxiStreamSource.enable">(cocotb_wrapper.axi.AxiStreamSource method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLockType.EXCLUSIVE.html#cocotb_wrapper.axi.AxiLockType.EXCLUSIVE">EXCLUSIVE (cocotb_wrapper.axi.AxiLockType attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiResp.EXOKAY.html#cocotb_wrapper.axi.AxiResp.EXOKAY">EXOKAY (cocotb_wrapper.axi.AxiResp attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstType.FIXED.html#cocotb_wrapper.axi.AxiBurstType.FIXED">FIXED (cocotb_wrapper.axi.AxiBurstType attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.get_payload.html#cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.get_payload">get_payload() (cocotb_wrapper.axi.RandomAxiLitePayloadGenerator method)</a>
+
+      <ul>
+        <li><a href="reference/generated/cocotb_wrapper.axi.RandomAxiPayloadGenerator.get_payload.html#cocotb_wrapper.axi.RandomAxiPayloadGenerator.get_payload">(cocotb_wrapper.axi.RandomAxiPayloadGenerator method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.get_payload.html#cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.get_payload">(cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteRam.hexdump.html#cocotb_wrapper.axi.AxiLiteRam.hexdump">hexdump() (cocotb_wrapper.axi.AxiLiteRam method)</a>
+
+      <ul>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiRam.hexdump.html#cocotb_wrapper.axi.AxiRam.hexdump">(cocotb_wrapper.axi.AxiRam method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstType.INCR.html#cocotb_wrapper.axi.AxiBurstType.INCR">INCR (cocotb_wrapper.axi.AxiBurstType attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiProt.INSTRUCTION.html#cocotb_wrapper.axi.AxiProt.INSTRUCTION">INSTRUCTION (cocotb_wrapper.axi.AxiProt attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiCacheBit.M.html#cocotb_wrapper.axi.AxiCacheBit.M">M (cocotb_wrapper.axi.AxiCacheBit attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.testbench.Testbench.name.html#cocotb_wrapper.testbench.Testbench.name">name (cocotb_wrapper.testbench.Testbench property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiProt.NONSECURE.html#cocotb_wrapper.axi.AxiProt.NONSECURE">NONSECURE (cocotb_wrapper.axi.AxiProt attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLockType.NORMAL.html#cocotb_wrapper.axi.AxiLockType.NORMAL">NORMAL (cocotb_wrapper.axi.AxiLockType attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiResp.OKAY.html#cocotb_wrapper.axi.AxiResp.OKAY">OKAY (cocotb_wrapper.axi.AxiResp attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiProt.PRIVILEGED.html#cocotb_wrapper.axi.AxiProt.PRIVILEGED">PRIVILEGED (cocotb_wrapper.axi.AxiProt attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiCacheBit.RA.html#cocotb_wrapper.axi.AxiCacheBit.RA">RA (cocotb_wrapper.axi.AxiCacheBit attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.html#cocotb_wrapper.axi.RandomAxiLitePayloadGenerator">RandomAxiLitePayloadGenerator (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.RandomAxiPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiPayloadGenerator">RandomAxiPayloadGenerator (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator">RandomAxiStreamPayloadGenerator (class in cocotb_wrapper.axi)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteMaster.read.html#cocotb_wrapper.axi.AxiLiteMaster.read">read() (cocotb_wrapper.axi.AxiLiteMaster method)</a>
+
+      <ul>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteRam.read.html#cocotb_wrapper.axi.AxiLiteRam.read">(cocotb_wrapper.axi.AxiLiteRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiMaster.read.html#cocotb_wrapper.axi.AxiMaster.read">(cocotb_wrapper.axi.AxiMaster method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiRam.read.html#cocotb_wrapper.axi.AxiRam.read">(cocotb_wrapper.axi.AxiRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSink.read.html#cocotb_wrapper.axi.AxiStreamSink.read">(cocotb_wrapper.axi.AxiStreamSink method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.testbench.Testbench.register_setup.html#cocotb_wrapper.testbench.Testbench.register_setup">register_setup() (cocotb_wrapper.testbench.Testbench method)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.testbench.Testbench.register_teardown.html#cocotb_wrapper.testbench.Testbench.register_teardown">register_teardown() (cocotb_wrapper.testbench.Testbench method)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.testbench.Testbench.register_test.html#cocotb_wrapper.testbench.Testbench.register_test">register_test() (cocotb_wrapper.testbench.Testbench method)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.testbench.Testbench.reset.html#cocotb_wrapper.testbench.Testbench.reset">reset() (cocotb_wrapper.testbench.Testbench method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteMaster.set_backpressure_generator.html#cocotb_wrapper.axi.AxiLiteMaster.set_backpressure_generator">set_backpressure_generator() (cocotb_wrapper.axi.AxiLiteMaster method)</a>
+
+      <ul>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteRam.set_backpressure_generator.html#cocotb_wrapper.axi.AxiLiteRam.set_backpressure_generator">(cocotb_wrapper.axi.AxiLiteRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiMaster.set_backpressure_generator.html#cocotb_wrapper.axi.AxiMaster.set_backpressure_generator">(cocotb_wrapper.axi.AxiMaster method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiRam.set_backpressure_generator.html#cocotb_wrapper.axi.AxiRam.set_backpressure_generator">(cocotb_wrapper.axi.AxiRam method)</a>
+</li>
+      </ul></li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteMaster.set_idle_generator.html#cocotb_wrapper.axi.AxiLiteMaster.set_idle_generator">set_idle_generator() (cocotb_wrapper.axi.AxiLiteMaster method)</a>
+
+      <ul>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteRam.set_idle_generator.html#cocotb_wrapper.axi.AxiLiteRam.set_idle_generator">(cocotb_wrapper.axi.AxiLiteRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiMaster.set_idle_generator.html#cocotb_wrapper.axi.AxiMaster.set_idle_generator">(cocotb_wrapper.axi.AxiMaster method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiRam.set_idle_generator.html#cocotb_wrapper.axi.AxiRam.set_idle_generator">(cocotb_wrapper.axi.AxiRam method)</a>
+</li>
+      </ul></li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSink.set_pause_generator.html#cocotb_wrapper.axi.AxiStreamSink.set_pause_generator">set_pause_generator() (cocotb_wrapper.axi.AxiStreamSink method)</a>
+
+      <ul>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSource.set_pause_generator.html#cocotb_wrapper.axi.AxiStreamSource.set_pause_generator">(cocotb_wrapper.axi.AxiStreamSource method)</a>
+</li>
+      </ul></li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteMaster.setup.html#cocotb_wrapper.axi.AxiLiteMaster.setup">setup() (cocotb_wrapper.axi.AxiLiteMaster method)</a>
+
+      <ul>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteRam.setup.html#cocotb_wrapper.axi.AxiLiteRam.setup">(cocotb_wrapper.axi.AxiLiteRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiMaster.setup.html#cocotb_wrapper.axi.AxiMaster.setup">(cocotb_wrapper.axi.AxiMaster method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiRam.setup.html#cocotb_wrapper.axi.AxiRam.setup">(cocotb_wrapper.axi.AxiRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSink.setup.html#cocotb_wrapper.axi.AxiStreamSink.setup">(cocotb_wrapper.axi.AxiStreamSink method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSource.setup.html#cocotb_wrapper.axi.AxiStreamSource.setup">(cocotb_wrapper.axi.AxiStreamSource method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstSize.SIZE_1.html#cocotb_wrapper.axi.AxiBurstSize.SIZE_1">SIZE_1 (cocotb_wrapper.axi.AxiBurstSize attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstSize.SIZE_128.html#cocotb_wrapper.axi.AxiBurstSize.SIZE_128">SIZE_128 (cocotb_wrapper.axi.AxiBurstSize attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstSize.SIZE_16.html#cocotb_wrapper.axi.AxiBurstSize.SIZE_16">SIZE_16 (cocotb_wrapper.axi.AxiBurstSize attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstSize.SIZE_2.html#cocotb_wrapper.axi.AxiBurstSize.SIZE_2">SIZE_2 (cocotb_wrapper.axi.AxiBurstSize attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstSize.SIZE_32.html#cocotb_wrapper.axi.AxiBurstSize.SIZE_32">SIZE_32 (cocotb_wrapper.axi.AxiBurstSize attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstSize.SIZE_4.html#cocotb_wrapper.axi.AxiBurstSize.SIZE_4">SIZE_4 (cocotb_wrapper.axi.AxiBurstSize attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstSize.SIZE_64.html#cocotb_wrapper.axi.AxiBurstSize.SIZE_64">SIZE_64 (cocotb_wrapper.axi.AxiBurstSize attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstSize.SIZE_8.html#cocotb_wrapper.axi.AxiBurstSize.SIZE_8">SIZE_8 (cocotb_wrapper.axi.AxiBurstSize attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiResp.SLVERR.html#cocotb_wrapper.axi.AxiResp.SLVERR">SLVERR (cocotb_wrapper.axi.AxiResp attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.testbench.Testbench.start_clk.html#cocotb_wrapper.testbench.Testbench.start_clk">start_clk() (cocotb_wrapper.testbench.Testbench method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.testbench.Testbench.html#cocotb_wrapper.testbench.Testbench">Testbench (class in cocotb_wrapper.testbench)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiCacheBit.WA.html#cocotb_wrapper.axi.AxiCacheBit.WA">WA (cocotb_wrapper.axi.AxiCacheBit attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiBurstType.WRAP.html#cocotb_wrapper.axi.AxiBurstType.WRAP">WRAP (cocotb_wrapper.axi.AxiBurstType attribute)</a>
+</li>
+      <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteMaster.write.html#cocotb_wrapper.axi.AxiLiteMaster.write">write() (cocotb_wrapper.axi.AxiLiteMaster method)</a>
+
+      <ul>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiLiteRam.write.html#cocotb_wrapper.axi.AxiLiteRam.write">(cocotb_wrapper.axi.AxiLiteRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiMaster.write.html#cocotb_wrapper.axi.AxiMaster.write">(cocotb_wrapper.axi.AxiMaster method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiRam.write.html#cocotb_wrapper.axi.AxiRam.write">(cocotb_wrapper.axi.AxiRam method)</a>
+</li>
+        <li><a href="reference/generated/cocotb_wrapper.axi.AxiStreamSource.write.html#cocotb_wrapper.axi.AxiStreamSource.write">(cocotb_wrapper.axi.AxiStreamSource method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023, ZHAW Institute of Embedded Systems.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

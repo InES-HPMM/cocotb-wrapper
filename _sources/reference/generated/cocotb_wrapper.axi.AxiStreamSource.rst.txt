@@ -1,0 +1,38 @@
+﻿cocotb\_wrapper.axi.AxiStreamSource
+===================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: AxiStreamSource
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~AxiStreamSource.disable
+   
+   
+      ~AxiStreamSource.enable
+   
+   
+      ~AxiStreamSource.set_pause_generator
+   
+   
+      ~AxiStreamSource.setup
+   
+   
+      ~AxiStreamSource.write
+   
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+cocotb\_wrapper.testbench.Testbench.name
+========================================
+
+.. currentmodule:: cocotb_wrapper.testbench
+
+.. autoproperty:: Testbench.name

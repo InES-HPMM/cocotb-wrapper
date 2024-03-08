@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiStreamSink.set\_pause\_generator
+=======================================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiStreamSink.set_pause_generator

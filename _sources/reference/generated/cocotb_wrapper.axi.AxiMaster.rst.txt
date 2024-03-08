@@ -1,0 +1,44 @@
+﻿cocotb\_wrapper.axi.AxiMaster
+=============================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: AxiMaster
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~AxiMaster.disable
+   
+   
+      ~AxiMaster.enable
+   
+   
+      ~AxiMaster.read
+   
+   
+      ~AxiMaster.set_backpressure_generator
+   
+   
+      ~AxiMaster.set_idle_generator
+   
+   
+      ~AxiMaster.setup
+   
+   
+      ~AxiMaster.write
+   
+   
+   
+
+   
+   
+   

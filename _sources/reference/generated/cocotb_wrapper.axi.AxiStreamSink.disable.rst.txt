@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiStreamSink.disable
+=========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiStreamSink.disable

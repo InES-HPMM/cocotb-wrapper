@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiMaster.set\_idle\_generator
+==================================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiMaster.set_idle_generator

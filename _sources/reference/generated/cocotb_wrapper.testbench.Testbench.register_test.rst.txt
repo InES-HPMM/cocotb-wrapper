@@ -1,0 +1,6 @@
+cocotb\_wrapper.testbench.Testbench.register\_test
+==================================================
+
+.. currentmodule:: cocotb_wrapper.testbench
+
+.. automethod:: Testbench.register_test

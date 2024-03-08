@@ -1,0 +1,44 @@
+﻿cocotb\_wrapper.axi.AxiLiteMaster
+=================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: AxiLiteMaster
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~AxiLiteMaster.disable
+   
+   
+      ~AxiLiteMaster.enable
+   
+   
+      ~AxiLiteMaster.read
+   
+   
+      ~AxiLiteMaster.set_backpressure_generator
+   
+   
+      ~AxiLiteMaster.set_idle_generator
+   
+   
+      ~AxiLiteMaster.setup
+   
+   
+      ~AxiLiteMaster.write
+   
+   
+   
+
+   
+   
+   

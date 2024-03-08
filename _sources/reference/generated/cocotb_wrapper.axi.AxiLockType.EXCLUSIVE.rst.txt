@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiLockType.EXCLUSIVE
+=========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiLockType.EXCLUSIVE

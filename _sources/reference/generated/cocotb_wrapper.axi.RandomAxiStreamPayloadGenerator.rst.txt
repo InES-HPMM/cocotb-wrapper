@@ -1,0 +1,26 @@
+﻿cocotb\_wrapper.axi.RandomAxiStreamPayloadGenerator
+===================================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: RandomAxiStreamPayloadGenerator
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~RandomAxiStreamPayloadGenerator.get_payload
+   
+   
+   
+
+   
+   
+   

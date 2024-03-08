@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiLiteMaster.read
+======================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiLiteMaster.read

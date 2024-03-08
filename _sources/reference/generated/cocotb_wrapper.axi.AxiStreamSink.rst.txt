@@ -1,0 +1,38 @@
+﻿cocotb\_wrapper.axi.AxiStreamSink
+=================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: AxiStreamSink
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~AxiStreamSink.disable
+   
+   
+      ~AxiStreamSink.enable
+   
+   
+      ~AxiStreamSink.read
+   
+   
+      ~AxiStreamSink.set_pause_generator
+   
+   
+      ~AxiStreamSink.setup
+   
+   
+   
+
+   
+   
+   

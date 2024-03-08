@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.RandomAxiLitePayloadGenerator.get\_payload
+==============================================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: RandomAxiLitePayloadGenerator.get_payload

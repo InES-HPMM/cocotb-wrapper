@@ -1,0 +1,47 @@
+﻿cocotb\_wrapper.axi.AxiLiteRam
+==============================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: AxiLiteRam
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~AxiLiteRam.disable
+   
+   
+      ~AxiLiteRam.enable
+   
+   
+      ~AxiLiteRam.hexdump
+   
+   
+      ~AxiLiteRam.read
+   
+   
+      ~AxiLiteRam.set_backpressure_generator
+   
+   
+      ~AxiLiteRam.set_idle_generator
+   
+   
+      ~AxiLiteRam.setup
+   
+   
+      ~AxiLiteRam.write
+   
+   
+   
+
+   
+   
+   

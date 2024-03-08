@@ -1,0 +1,26 @@
+﻿cocotb\_wrapper.axi.RandomAxiPayloadGenerator
+=============================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: RandomAxiPayloadGenerator
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~RandomAxiPayloadGenerator.get_payload
+   
+   
+   
+
+   
+   
+   

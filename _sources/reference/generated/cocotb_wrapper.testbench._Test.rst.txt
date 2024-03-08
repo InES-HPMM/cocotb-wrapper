@@ -1,0 +1,23 @@
+﻿cocotb\_wrapper.testbench.\_Test
+================================
+
+.. currentmodule:: cocotb_wrapper.testbench
+
+.. autoclass:: _Test
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+   
+
+   
+   
+   

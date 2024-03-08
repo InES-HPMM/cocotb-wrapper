@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiStreamSink.read
+======================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiStreamSink.read

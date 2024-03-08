@@ -1,0 +1,26 @@
+﻿cocotb\_wrapper.axi.AxiCacheBit
+===============================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: AxiCacheBit
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ~AxiCacheBit.B
+      ~AxiCacheBit.M
+      ~AxiCacheBit.RA
+      ~AxiCacheBit.WA
+   
+   

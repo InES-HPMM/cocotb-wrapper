@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiMaster.enable
+====================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiMaster.enable

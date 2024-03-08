@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiProt.PRIVILEGED
+======================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiProt.PRIVILEGED

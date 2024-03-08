@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiMaster.set\_backpressure\_generator
+==========================================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiMaster.set_backpressure_generator

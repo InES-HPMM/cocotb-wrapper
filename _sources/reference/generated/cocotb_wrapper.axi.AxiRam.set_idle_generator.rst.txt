@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiRam.set\_idle\_generator
+===============================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiRam.set_idle_generator

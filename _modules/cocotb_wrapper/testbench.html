@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocotb_wrapper.testbench &#8212; cocotb-wrapper v1.1 Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/katex-math.css?v=91adb8b6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=def9ab29"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/cocotb_wrapper/testbench';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/zhaw_logo_only.svg" class="logo__image only-light" alt="cocotb-wrapper v1.1 Manual - Home"/>
+    <script>document.write(`<img src="../../_static/zhaw_logo_only.svg" class="logo__image only-dark" alt="cocotb-wrapper v1.1 Manual - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../reference/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../dev/index.html">
+                        Development
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Release notes
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/InES-HPMM/cocotb-wrapper" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://blog.zhaw.ch/high-performance/" title="ZHAW InES HPMM Blog" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/zhaw_logo_only.svg" class="icon-link-image" alt="ZHAW InES HPMM Blog"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../reference/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../dev/index.html">
+                        Development
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../release.html">
+                        Release notes
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/InES-HPMM/cocotb-wrapper" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://blog.zhaw.ch/high-performance/" title="ZHAW InES HPMM Blog" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/zhaw_logo_only.svg" class="icon-link-image" alt="ZHAW InES HPMM Blog"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+</form></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">cocotb_wrapp...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for cocotb_wrapper.testbench</h1><div class="highlight"><pre>
+<span></span><span class="c1"># ============================================================</span>
+<span class="c1">#   _____       ______  _____</span>
+<span class="c1">#  |_   _|     |  ____|/ ____|</span>
+<span class="c1">#    | |  _ __ | |__  | (___    Institute of Embedded Systems</span>
+<span class="c1">#    | | | &#39;_ \|  __|  \___ \   Zurich University of</span>
+<span class="c1">#   _| |_| | | | |____ ____) |  Applied Sciences</span>
+<span class="c1">#  |_____|_| |_|______|_____/   8401 Winterthur, Switzerland</span>
+<span class="c1"># ============================================================</span>
+
+<span class="sd">&quot;&quot;&quot;A cocotb testbench.</span>
+
+<span class="sd">This module wraps around the :class:`cocotb.test` decorator and facilitates the</span>
+<span class="sd">use with cocotb testbenches.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Thierry Delafontaine&quot;</span>
+<span class="n">__mail__</span> <span class="o">=</span> <span class="s2">&quot;deaa@zhaw.ch&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;2022 ZHAW Institute of Embedded Systems&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;2024-02-27&quot;</span>
+
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Awaitable</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+
+<span class="kn">from</span> <span class="nn">cocotb</span> <span class="kn">import</span> <span class="n">start_soon</span><span class="p">,</span> <span class="n">test</span>
+<span class="kn">from</span> <span class="nn">cocotb.clock</span> <span class="kn">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">cocotb.handle</span> <span class="kn">import</span> <span class="n">HierarchyObject</span>
+<span class="kn">from</span> <span class="nn">cocotb.log</span> <span class="kn">import</span> <span class="n">SimLog</span>
+<span class="kn">from</span> <span class="nn">cocotb.triggers</span> <span class="kn">import</span> <span class="n">RisingEdge</span><span class="p">,</span> <span class="n">Timer</span>
+
+
+<div class="viewcode-block" id="Testbench"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.html#cocotb_wrapper.testbench.Testbench">[docs]</a><span class="k">class</span> <span class="nc">Testbench</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A cocotb testbench.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Testbench.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.html#cocotb_wrapper.testbench.Testbench.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">clk</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">rst</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">reset_active_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize an instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name: The name of the device under test</span>
+<span class="sd">            clk: The clock signal of the device under test</span>
+<span class="sd">            rst: The reset signal of the device under test</span>
+<span class="sd">            reset_active_level: 1 if the reset is active high, else active low</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_test_id_counter</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">clk</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_clk</span> <span class="o">=</span> <span class="n">clk</span>
+        <span class="k">if</span> <span class="n">rst</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_rst</span> <span class="o">=</span> <span class="n">rst</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset_active_level</span> <span class="o">=</span> <span class="n">reset_active_level</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">SimLog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_teardown</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="kc">None</span>
+        <span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the name of the device under test.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The name of the device under test</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+<div class="viewcode-block" id="Testbench.register_setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.register_setup.html#cocotb_wrapper.testbench.Testbench.register_setup">[docs]</a>    <span class="k">def</span> <span class="nf">register_setup</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span>
+        <span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]]],</span>
+        <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]],</span>
+    <span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make the decorated function the setup function.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A decorator function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_to_instance</span><span class="p">(</span><span class="s2">&quot;_setup&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Testbench.register_teardown"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.register_teardown.html#cocotb_wrapper.testbench.Testbench.register_teardown">[docs]</a>    <span class="k">def</span> <span class="nf">register_teardown</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span>
+        <span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]]],</span>
+        <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]],</span>
+    <span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make the decorated function the teardown function.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A decorator function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_to_instance</span><span class="p">(</span><span class="s2">&quot;_teardown&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Testbench.register_test"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.register_test.html#cocotb_wrapper.testbench.Testbench.register_test">[docs]</a>    <span class="k">def</span> <span class="nf">register_test</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">timeout_time</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">timeout_unit</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;step&quot;</span><span class="p">,</span>
+        <span class="n">expect_fail</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">expect_error</span><span class="p">:</span> <span class="ne">Exception</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="ne">Exception</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+        <span class="n">skip</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">stage</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span>
+        <span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]],</span>
+        <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]],</span>
+    <span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Decorate a function to register the function as a test.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            timeout_time: The duration before a timeout occurs</span>
+<span class="sd">            timeout_unit: The unit of the timeout time</span>
+<span class="sd">            expect_fail: Don&#39;t mark the test as failed if the test fails.</span>
+<span class="sd">            expect_error: Mark the test as passed only if the given exception is</span>
+<span class="sd">                raised</span>
+<span class="sd">            skip: Skip this test</span>
+<span class="sd">            stage: Order tests logically into stages, where multiple test can</span>
+<span class="sd">                share a stage</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A decorator function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span>
+            <span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Register the function as a cocotb test.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                f: The decorated function</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                The input function `f`</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+
+            <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">async</span> <span class="k">def</span> <span class="nf">_test_function</span><span class="p">(</span><span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_setup_function</span><span class="p">()(</span><span class="n">dut</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Setup completed&quot;</span><span class="p">)</span>
+                <span class="k">await</span> <span class="n">f</span><span class="p">(</span><span class="n">dut</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Test finished&quot;</span><span class="p">)</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_teardown_function</span><span class="p">()(</span><span class="n">dut</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Teardown completed&quot;</span><span class="p">)</span>
+
+            <span class="n">test</span> <span class="o">=</span> <span class="n">_Test</span><span class="p">(</span>
+                <span class="n">test_function</span><span class="o">=</span><span class="n">_test_function</span><span class="p">,</span>
+                <span class="n">test_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_new_test_id</span><span class="p">(),</span>
+                <span class="n">timeout_time</span><span class="o">=</span><span class="n">timeout_time</span><span class="p">,</span>
+                <span class="n">timeout_unit</span><span class="o">=</span><span class="n">timeout_unit</span><span class="p">,</span>
+                <span class="n">expect_fail</span><span class="o">=</span><span class="n">expect_fail</span><span class="p">,</span>
+                <span class="n">expect_error</span><span class="o">=</span><span class="n">expect_error</span><span class="p">,</span>
+                <span class="n">skip</span><span class="o">=</span><span class="n">skip</span><span class="p">,</span>
+                <span class="n">stage</span><span class="o">=</span><span class="n">stage</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                <span class="s2">&quot;Registered </span><span class="si">%s</span><span class="s2"> to module </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">test</span><span class="o">.</span><span class="fm">__call__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+                <span class="n">test</span><span class="o">.</span><span class="fm">__call__</span><span class="o">.</span><span class="vm">__module__</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">test</span><span class="o">.</span><span class="fm">__call__</span>
+
+        <span class="k">return</span> <span class="n">decorator</span></div>
+
+<div class="viewcode-block" id="Testbench.reset"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.reset.html#cocotb_wrapper.testbench.Testbench.reset">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">,</span> <span class="n">time</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">units</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset the DUT.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dut: The device under test</span>
+<span class="sd">            time: The time to hold the reset</span>
+<span class="sd">            units: The unit of the time value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_rst&quot;</span><span class="p">):</span>
+            <span class="nb">getattr</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rst</span><span class="p">)</span><span class="o">.</span><span class="n">setimmediatevalue</span><span class="p">(</span>
+                <span class="mi">1</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset_active_level</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="p">)</span>
+            <span class="k">await</span> <span class="n">Timer</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="n">units</span><span class="p">)</span>
+            <span class="nb">getattr</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rst</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset_active_level</span> <span class="k">else</span> <span class="mi">1</span>
+            <span class="k">await</span> <span class="n">RisingEdge</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rst</span><span class="p">))</span>
+            <span class="nb">getattr</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rst</span><span class="p">)</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Reset complete&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Reset not available&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Testbench.start_clk"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.start_clk.html#cocotb_wrapper.testbench.Testbench.start_clk">[docs]</a>    <span class="k">def</span> <span class="nf">start_clk</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">,</span> <span class="n">period</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">units</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Start the clock.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dut: The device under test</span>
+<span class="sd">            period: The clock period. Must convert to an even number of</span>
+<span class="sd">                timesteps</span>
+<span class="sd">            units: One of ``&#39;step&#39;``, ``&#39;fs&#39;``, ``&#39;ps&#39;``, ``&#39;ns&#39;``, ``&#39;us&#39;``,</span>
+<span class="sd">                ``&#39;ms&#39;``, ``&#39;sec&#39;``. When units is ``&#39;step&#39;``, the timestep is</span>
+<span class="sd">                determined by the simulator (see</span>
+<span class="sd">                :make:var:`COCOTB_HDL_TIMEPRECISION`)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_clk&quot;</span><span class="p">):</span>
+            <span class="n">start_soon</span><span class="p">(</span>
+                <span class="n">Clock</span><span class="p">(</span>
+                    <span class="nb">getattr</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clk</span><span class="p">),</span> <span class="n">period</span><span class="o">=</span><span class="n">period</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="n">units</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Clock not available&quot;</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_add_to_instance</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span>
+        <span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]]],</span>
+        <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]],</span>
+    <span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add the decorated function to the instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name: The name of the instance method</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A decorator function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span>
+            <span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]]</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]]:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Make the decorated function a method of the testbench.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                f: The decorated function</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                The same function</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Added </span><span class="si">%s</span><span class="s2"> to </span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">f</span>
+
+        <span class="k">return</span> <span class="n">decorator</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_default_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set up the testbench.</span>
+
+<span class="sd">        This function is the default setup function and is executed if no other</span>
+<span class="sd">        setup function is registered.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dut: The device under test</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_clk</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;ns&quot;</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;ns&quot;</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_default_teardown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Teardown the testbench.</span>
+
+<span class="sd">        This function is the default teardown function and is executed if no</span>
+<span class="sd">        other teardown function is registered.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dut: The device under test</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;ns&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_new_test_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a new test ID.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A new unique test ID</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">new_test_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_test_id_counter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_test_id_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">new_test_id</span>
+
+    <span class="k">def</span> <span class="nf">_get_setup_function</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the setup function.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The testbenches setup function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_setup</span>
+
+    <span class="k">def</span> <span class="nf">_get_teardown_function</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the teardown function.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The testbenches teardown function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_teardown</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_teardown</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_teardown</span></div>
+
+
+<div class="viewcode-block" id="_Test"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench._Test.html#cocotb_wrapper.testbench._Test">[docs]</a><span class="k">class</span> <span class="nc">_Test</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A single test of a testbench.</span>
+
+<span class="sd">    This class is not intended to be instantiated directly. Instead use</span>
+<span class="sd">    :class:`~cocotb_wrapper.testbench.Testbench` to create a testbench and</span>
+<span class="sd">    register tests with</span>
+<span class="sd">    :meth:`~cocotb_wrapper.testbench.Testbench.register_test`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="_Test.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench._Test.html#cocotb_wrapper.testbench._Test.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">test_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]],</span>
+        <span class="n">test_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">timeout_time</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">timeout_unit</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;step&quot;</span><span class="p">,</span>
+        <span class="n">expect_fail</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">expect_error</span><span class="p">:</span> <span class="ne">Exception</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="ne">Exception</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+        <span class="n">skip</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">stage</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize an instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            test_function: The test function</span>
+<span class="sd">            test_id: The test identifier</span>
+<span class="sd">            timeout_time: The duration before a timeout occurs</span>
+<span class="sd">            timeout_unit: The unit of the timeout time</span>
+<span class="sd">            expect_fail: Don&#39;t mark the test as failed if the test fails.</span>
+<span class="sd">            expect_error: Mark the test as passed only if the given exception is</span>
+<span class="sd">                raised</span>
+<span class="sd">            skip: Skip this test</span>
+<span class="sd">            stage: Order tests logically into stages, where multiple test can</span>
+<span class="sd">                share a stage</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">SimLog</span><span class="p">(</span><span class="n">test_function</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">test_function</span><span class="p">)</span>
+        <span class="k">async</span> <span class="k">def</span> <span class="nf">_test_function</span><span class="p">(</span><span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">dut</span><span class="o">.</span><span class="n">test_id</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_test_id</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;&#39;Set test_id&#39; to </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_test_id</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;No &#39;test_id&#39; signal found in DUT&quot;</span><span class="p">)</span>
+            <span class="k">await</span> <span class="n">test_function</span><span class="p">(</span><span class="n">dut</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="fm">__call__</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span>
+            <span class="n">timeout_time</span><span class="o">=</span><span class="n">timeout_time</span><span class="p">,</span>
+            <span class="n">timeout_unit</span><span class="o">=</span><span class="n">timeout_unit</span><span class="p">,</span>
+            <span class="n">expect_fail</span><span class="o">=</span><span class="n">expect_fail</span><span class="p">,</span>
+            <span class="n">expect_error</span><span class="o">=</span><span class="n">expect_error</span><span class="p">,</span>
+            <span class="n">skip</span><span class="o">=</span><span class="n">skip</span><span class="p">,</span>
+            <span class="n">stage</span><span class="o">=</span><span class="n">stage</span><span class="p">,</span>
+        <span class="p">)(</span><span class="n">_test_function</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_test_id</span> <span class="o">=</span> <span class="n">test_id</span></div></div>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023, ZHAW Institute of Embedded Systems.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

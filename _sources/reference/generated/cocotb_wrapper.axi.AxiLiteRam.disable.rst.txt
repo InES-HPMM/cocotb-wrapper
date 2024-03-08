@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiLiteRam.disable
+======================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiLiteRam.disable

@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiStreamSource.setup
+=========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiStreamSource.setup

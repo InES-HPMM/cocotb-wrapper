@@ -1,0 +1,30 @@
+﻿cocotb\_wrapper.axi.AxiBurstSize
+================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: AxiBurstSize
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ~AxiBurstSize.SIZE_1
+      ~AxiBurstSize.SIZE_2
+      ~AxiBurstSize.SIZE_4
+      ~AxiBurstSize.SIZE_8
+      ~AxiBurstSize.SIZE_16
+      ~AxiBurstSize.SIZE_32
+      ~AxiBurstSize.SIZE_64
+      ~AxiBurstSize.SIZE_128
+   
+   

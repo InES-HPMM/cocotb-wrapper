@@ -1,0 +1,25 @@
+﻿cocotb\_wrapper.axi.AxiProt
+===========================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: AxiProt
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ~AxiProt.PRIVILEGED
+      ~AxiProt.NONSECURE
+      ~AxiProt.INSTRUCTION
+   
+   

@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiResp.EXOKAY
+==================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiResp.EXOKAY

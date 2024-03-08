@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiResp.SLVERR
+==================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiResp.SLVERR

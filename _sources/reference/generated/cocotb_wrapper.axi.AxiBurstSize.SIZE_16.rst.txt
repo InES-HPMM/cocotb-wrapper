@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiBurstSize.SIZE\_16
+=========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiBurstSize.SIZE_16

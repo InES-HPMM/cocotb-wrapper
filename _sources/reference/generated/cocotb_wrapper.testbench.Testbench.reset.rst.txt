@@ -1,0 +1,6 @@
+cocotb\_wrapper.testbench.Testbench.reset
+=========================================
+
+.. currentmodule:: cocotb_wrapper.testbench
+
+.. automethod:: Testbench.reset

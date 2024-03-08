@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.RandomAxiStreamPayloadGenerator.get\_payload
+================================================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: RandomAxiStreamPayloadGenerator.get_payload

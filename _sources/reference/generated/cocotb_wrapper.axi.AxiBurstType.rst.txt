@@ -1,0 +1,25 @@
+﻿cocotb\_wrapper.axi.AxiBurstType
+================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoclass:: AxiBurstType
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ~AxiBurstType.FIXED
+      ~AxiBurstType.INCR
+      ~AxiBurstType.WRAP
+   
+   

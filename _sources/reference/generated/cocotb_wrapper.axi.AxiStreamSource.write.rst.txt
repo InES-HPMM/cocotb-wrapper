@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiStreamSource.write
+=========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiStreamSource.write

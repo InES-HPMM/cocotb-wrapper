@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiMaster.write
+===================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiMaster.write
