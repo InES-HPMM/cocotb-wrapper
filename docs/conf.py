@@ -105,7 +105,7 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.zhaw.ch/deaa/cocotb-wrapper",
+            "url": "https://github.com/InES-HPMM/cocotb-wrapper",
             "icon": "fa-brands fa-square-github",
             "type": "fontawesome",
         },

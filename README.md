@@ -6,7 +6,7 @@ around `cocotbext-axi`.
 
 ## Documentation
 
-A little more detailed documentation is available [here](https://github.zhaw.ch/pages/hpmm/cocotb-wrapper/).
+A little more detailed documentation is available [here](https://github.com/pages/InES-HPMM/cocotb-wrapper/).
 
 ## Writing tests using `Testbench`
 

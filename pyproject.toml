@@ -6,18 +6,17 @@ license = "MIT"
 authors = ["Thierry Delafontaine <deaa@zhaw.ch>"]
 maintainers = ["Thierry Delafontaine <deaa@zhaw.ch>"]
 readme = "README.md"
-repository = "https://github.zhaw.ch/hpmm/cocotb-wrapper"
+repository = "https://github.com/InES-HPMM/cocotb-wrapper"
 keywords = [
+  "cocotb",
   "fpga",
+  "testing",
   "vhdl",
   "verilog",
-  "cocotb",
 ]
 classifiers = [
-  "Development Status :: 2 - Pre-Alpha",
   "Intended Audience :: Developers",
   "License :: OSI Approved :: MIT License",
-  "Programming Language :: Other",
   "Programming Language :: Python :: 3",
   "Topic :: Scientific/Engineering",
 ]
