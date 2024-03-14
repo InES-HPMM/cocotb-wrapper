@@ -62,11 +62,10 @@ async def test_add(dut):
 Now when we call the registered tests, every test will execute:
 
 1. the registered setup function
-2. The registered test function
-3. The registered teardown function
+2. the registered test function
+3. the registered teardown function
 
-until all the registered tests have been executed. Additionally, the a `test_id`
-signal within the DUT can be set to the test ID number. However, this requires
-your DUT to have a `test_id` signal. The `test_id` signal allows to distinguish
-tests more easily within the generated wave files, since all the tests will
-sequentially in one file.
+until all the registered tests have been executed. An additional `test_id`
+signal (preferrably with the type integer) within the DUT is set to the test ID
+number. This allows to distinguish tests more easily within the generated wave
+files, since all the tests are sequentially in one file.
