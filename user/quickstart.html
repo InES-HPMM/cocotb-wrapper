@@ -486,14 +486,13 @@ registered, the default ones are executed, which are the ones showed above.</p>
 <p>Now when we call the registered tests, every test will execute:</p>
 <ol class="arabic simple">
 <li><p>the registered setup function</p></li>
-<li><p>The registered test function</p></li>
-<li><p>The registered teardown function</p></li>
+<li><p>the registered test function</p></li>
+<li><p>the registered teardown function</p></li>
 </ol>
-<p>until all the registered tests have been executed. Additionally, the a <code class="docutils literal notranslate"><span class="pre">test_id</span></code>
-signal within the DUT can be set to the test ID number. However, this requires
-your DUT to have a <code class="docutils literal notranslate"><span class="pre">test_id</span></code> signal. The <code class="docutils literal notranslate"><span class="pre">test_id</span></code> signal allows to distinguish
-tests more easily within the generated wave files, since all the tests will
-sequentially in one file.</p>
+<p>until all the registered tests have been executed. An additional <code class="docutils literal notranslate"><span class="pre">test_id</span></code>signal
+(preferrably with the type integer) within the DUT is set to the test ID number.
+This allows to distinguish tests more easily within the generated wave files,
+since all the tests are sequentially in one file.</p>
 </section>
 </section>
 </section>
