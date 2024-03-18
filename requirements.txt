@@ -1,6 +1,6 @@
-cocotb-bus==0.2.1 ; python_version >= "3.8" and python_version < "3.12" \
+cocotb-bus==0.2.1 ; python_version >= "3.8" \
     --hash=sha256:a197aa4b0e0ad28469c8877b41b3fb2ec0206da9f491b9276d1578ce6dd8aa8d
-cocotb==1.8.1 ; python_version >= "3.8" and python_version < "3.12" \
+cocotb==1.8.1 ; python_version >= "3.8" \
     --hash=sha256:032569407d22b55a1d7acb07b1be12e2010e332c49d2c04404707d10d892cc27 \
     --hash=sha256:06ae2b2d899095ee4fd4f9604e0fd3706102ef681659f8dc68e4faf6d990d89f \
     --hash=sha256:1196ba5f341c4e6752e4db71e99932499980a907ec264387d75c6f37d3e09ab6 \
@@ -37,8 +37,9 @@ cocotb==1.8.1 ; python_version >= "3.8" and python_version < "3.12" \
     --hash=sha256:e8d9525a92312d8271fc612c98ce027d285c3f93925f63908c4e9af72a9ba5eb \
     --hash=sha256:f3a6f6f0fa5914c491d22d5796f15b5d0b152f76c071fecb3665af60b471bbe7 \
     --hash=sha256:f8d642e1106750a519c015c651ec94a5d9008da0a29d39b2d073206bd60ce452
-cocotbext-axi==0.1.24 ; python_version >= "3.8" and python_version < "3.12" \
+cocotbext-axi==0.1.24 ; python_version >= "3.8" \
     --hash=sha256:3ed62dcaf9448833176826507c5bc5c346431c4846a731e409d87c862d960593 \
     --hash=sha256:533ba6c7503c6302bdb9ef86e43a549ad5da876eafb1adce23d39751c54cced4
-find-libpython==0.3.1 ; python_version >= "3.8" and python_version < "3.12" \
-    --hash=sha256:f63c2c05b9c6077bfafa5c7b283547b918a54c17fd930ceead487d1f220ff9cb
+find-libpython==0.4.0 ; python_version >= "3.8" \
+    --hash=sha256:034a4253bd57da3408aefc59aeac1650150f6c1f42e10fdd31615cf1df0842e3 \
+    --hash=sha256:46f9cdcd397ddb563b2d7592ded3796a41c1df5222443bd9d981721c906c03e6
