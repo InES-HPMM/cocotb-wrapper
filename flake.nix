@@ -34,7 +34,6 @@
             default = pkgs.mkShell {
               name = "cocotb-wrapper";
               packages = with pkgs; [ nodejs poetry poetryPlugins.poetry-plugin-export pre-commit ];
-              LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
             };
           };
         };
