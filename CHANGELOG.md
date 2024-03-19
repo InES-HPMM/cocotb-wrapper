@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2] - 2024-03-19
+
+### 🚀 Features
+
+- Allow python 3.12
+
+### 📚 Documentation
+
+- Improve README.md
+
+### ⚙️ Miscellaneous Tasks
+
+- Do not install python dependencies into the environment; instead use poetry environments
+
 ## [1.1.1] - 2024-03-12
 
 ### 📚 Documentation
@@ -12,6 +26,7 @@ All notable changes to this project will be documented in this file.
 
 - Replace links to the old repo location
 - Update workflows for githubs runner
+- Generate changelog with `git cliff`
 
 ## [1.1.0] - 2024-03-02
 

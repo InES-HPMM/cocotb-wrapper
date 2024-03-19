@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cocotb-wrapper"
-version = "1.1.1"
+version = "1.1.2"
 description = "A wrapper around cocotb that facilitates using cocotb"
 license = "MIT"
 authors = ["Thierry Delafontaine <deaa@zhaw.ch>"]
