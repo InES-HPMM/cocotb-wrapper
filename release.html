@@ -41,7 +41,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
   <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=7a812f30"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=4d79a55a"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -437,23 +437,45 @@ document.write(`
 <h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h2>
 <p>All notable changes to this project will be documented in this file.</p>
 <section id="id1">
-<h3>[1.1.1] - 2024-03-12<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>[1.1.2] - 2024-03-19<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<section id="features">
+<h4>🚀 Features<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Allow python 3.12</p></li>
+</ul>
+</section>
 <section id="documentation">
 <h4>📚 Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Adjust link to gh-pages</p></li>
+<li><p>Improve README.md</p></li>
 </ul>
 </section>
 <section id="miscellaneous-tasks">
 <h4>⚙️ Miscellaneous Tasks<a class="headerlink" href="#miscellaneous-tasks" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Replace links to the old repo location</p></li>
-<li><p>Update workflows for githubs runner</p></li>
+<li><p>Do not install python dependencies into the environment; instead use poetry environments</p></li>
 </ul>
 </section>
 </section>
 <section id="id2">
-<h3>[1.1.0] - 2024-03-02<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>[1.1.1] - 2024-03-12<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="id3">
+<h4>📚 Documentation<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Adjust link to gh-pages</p></li>
+</ul>
+</section>
+<section id="id4">
+<h4>⚙️ Miscellaneous Tasks<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Replace links to the old repo location</p></li>
+<li><p>Update workflows for githubs runner</p></li>
+<li><p>Generate changelog with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cliff</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="id5">
+<h3>[1.1.0] - 2024-03-02<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <section id="bug-fixes">
 <h4>🐛 Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
@@ -463,15 +485,15 @@ document.write(`
 <li><p>Add poetry-plugin-export</p></li>
 </ul>
 </section>
-<section id="id3">
-<h4>📚 Documentation<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<section id="id6">
+<h4>📚 Documentation<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Add sphinx documentation</p></li>
 <li><p>Add link to published sphinx documentation</p></li>
 </ul>
 </section>
-<section id="id4">
-<h4>⚙️ Miscellaneous Tasks<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<section id="id7">
+<h4>⚙️ Miscellaneous Tasks<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Add gh workflows</p></li>
 <li><p>Transfer ownership to hpmm</p></li>
@@ -527,15 +549,21 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changelog">Changelog</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[1.1.1] - 2024-03-12</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[1.1.2] - 2024-03-19</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#features">🚀 Features</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">📚 Documentation</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous-tasks">⚙️ Miscellaneous Tasks</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[1.1.0] - 2024-03-02</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-fixes">🐛 Bug Fixes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[1.1.1] - 2024-03-12</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">📚 Documentation</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">⚙️ Miscellaneous Tasks</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">[1.1.0] - 2024-03-02</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-fixes">🐛 Bug Fixes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">📚 Documentation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">⚙️ Miscellaneous Tasks</a></li>
 </ul>
 </li>
 </ul>
