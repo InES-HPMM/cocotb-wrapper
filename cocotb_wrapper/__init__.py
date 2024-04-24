@@ -16,6 +16,7 @@ __email__ = "deaa@zhaw.ch"
 __copyright__ = "2023 ZHAW Institute of Embedded Systems"
 __date__ = "2023-08-30"
 
-from .testbench import Testbench
+from .testbench import Testbench, TestContext
+from .const import Constants
 
-__all__ = ["Testbench"]
+__all__ = ["Testbench", "TestContext", "Constants"]

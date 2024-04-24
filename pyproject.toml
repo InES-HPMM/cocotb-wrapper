@@ -24,6 +24,9 @@ packages = [
   {include = "cocotb_wrapper"},
 ]
 
+[tool.poetry.scripts]
+cocotb_wrapper = "cocotb_wrapper.cli:main"
+
 [tool.poetry.dependencies]
 python = ">=3.8"
 cocotb = "^1.8.1"
@@ -60,6 +63,7 @@ ruff = "^0.1.2"
 tox = "^4.11.3"
 types-toml = "^0.10.8.7"
 typing-extensions = "^4.6"
+cocotb-test = {git = "https://github.com/BlackspireAudio/cocotb-test.git"}
 
 [build-system]
 requires = ["poetry-core"]
