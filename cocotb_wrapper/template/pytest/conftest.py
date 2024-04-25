@@ -96,7 +96,7 @@ def session_run_args(request, simulator, toplevel_lang, seed, vhdl_compile_args,
         "sim_args": sim_args,
         "force_compile": force_compile,
         "gui": gui,
-        "sim_script": "setupgui.do" if gui else None,
+        # "sim_script": "setupgui.do" if gui else None, # autoload signal waveforms in questa gui (only works with scso's cocotb_fork)
         "extra_env": {"TB_LOG_LEVEL": loglevel},
     }
 
