@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiCacheBit.denominator
+===========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiCacheBit.denominator

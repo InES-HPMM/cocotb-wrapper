@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiProt.denominator
+=======================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiProt.denominator

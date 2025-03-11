@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiResp.bit\_count
+======================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiResp.bit_count

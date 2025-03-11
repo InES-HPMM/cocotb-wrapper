@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiLockType.from\_bytes
+===========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiLockType.from_bytes

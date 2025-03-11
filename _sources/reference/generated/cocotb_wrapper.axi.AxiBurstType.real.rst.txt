@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiBurstType.real
+=====================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiBurstType.real

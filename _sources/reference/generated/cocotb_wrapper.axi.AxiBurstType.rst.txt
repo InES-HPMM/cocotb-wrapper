@@ -9,6 +9,34 @@
    .. automethod:: __init__
 
    
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~AxiBurstType.as_integer_ratio
+   
+   
+      ~AxiBurstType.bit_count
+   
+   
+      ~AxiBurstType.bit_length
+   
+   
+      ~AxiBurstType.conjugate
+   
+   
+      ~AxiBurstType.from_bytes
+   
+   
+      ~AxiBurstType.is_integer
+   
+   
+      ~AxiBurstType.to_bytes
+   
+   
    
 
    
@@ -21,5 +49,9 @@
       ~AxiBurstType.FIXED
       ~AxiBurstType.INCR
       ~AxiBurstType.WRAP
+      ~AxiBurstType.denominator
+      ~AxiBurstType.imag
+      ~AxiBurstType.numerator
+      ~AxiBurstType.real
    
    

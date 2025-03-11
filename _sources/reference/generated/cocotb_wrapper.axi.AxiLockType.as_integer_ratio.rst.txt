@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiLockType.as\_integer\_ratio
+==================================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiLockType.as_integer_ratio

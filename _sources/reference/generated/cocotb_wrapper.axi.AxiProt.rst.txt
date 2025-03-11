@@ -9,6 +9,34 @@
    .. automethod:: __init__
 
    
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~AxiProt.as_integer_ratio
+   
+   
+      ~AxiProt.bit_count
+   
+   
+      ~AxiProt.bit_length
+   
+   
+      ~AxiProt.conjugate
+   
+   
+      ~AxiProt.from_bytes
+   
+   
+      ~AxiProt.is_integer
+   
+   
+      ~AxiProt.to_bytes
+   
+   
    
 
    
@@ -21,5 +49,9 @@
       ~AxiProt.PRIVILEGED
       ~AxiProt.NONSECURE
       ~AxiProt.INSTRUCTION
+      ~AxiProt.denominator
+      ~AxiProt.imag
+      ~AxiProt.numerator
+      ~AxiProt.real
    
    

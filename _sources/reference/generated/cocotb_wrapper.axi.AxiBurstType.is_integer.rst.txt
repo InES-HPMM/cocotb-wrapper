@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiBurstType.is\_integer
+============================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiBurstType.is_integer

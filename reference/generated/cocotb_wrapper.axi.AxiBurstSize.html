@@ -54,8 +54,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/cocotb_wrapper.axi.AxiBurstSize';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="cocotb_wrapper.axi.AxiBurstSize.SIZE_1" href="cocotb_wrapper.axi.AxiBurstSize.SIZE_1.html" />
-    <link rel="prev" title="cocotb_wrapper.axi.AxiBurstType.WRAP" href="cocotb_wrapper.axi.AxiBurstType.WRAP.html" />
+    <link rel="next" title="cocotb_wrapper.axi.AxiBurstSize.as_integer_ratio" href="cocotb_wrapper.axi.AxiBurstSize.as_integer_ratio.html" />
+    <link rel="prev" title="cocotb_wrapper.axi.AxiBurstType.real" href="cocotb_wrapper.axi.AxiBurstType.real.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -381,6 +381,13 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.html">cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstType.html">cocotb_wrapper.axi.AxiBurstType</a></li>
 <li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">cocotb_wrapper.axi.AxiBurstSize</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.as_integer_ratio.html">cocotb_wrapper.axi.AxiBurstSize.as_integer_ratio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.bit_count.html">cocotb_wrapper.axi.AxiBurstSize.bit_count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.bit_length.html">cocotb_wrapper.axi.AxiBurstSize.bit_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.conjugate.html">cocotb_wrapper.axi.AxiBurstSize.conjugate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.from_bytes.html">cocotb_wrapper.axi.AxiBurstSize.from_bytes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.is_integer.html">cocotb_wrapper.axi.AxiBurstSize.is_integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.to_bytes.html">cocotb_wrapper.axi.AxiBurstSize.to_bytes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.SIZE_1.html">cocotb_wrapper.axi.AxiBurstSize.SIZE_1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.SIZE_2.html">cocotb_wrapper.axi.AxiBurstSize.SIZE_2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.SIZE_4.html">cocotb_wrapper.axi.AxiBurstSize.SIZE_4</a></li>
@@ -389,6 +396,10 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.SIZE_32.html">cocotb_wrapper.axi.AxiBurstSize.SIZE_32</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.SIZE_64.html">cocotb_wrapper.axi.AxiBurstSize.SIZE_64</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.SIZE_128.html">cocotb_wrapper.axi.AxiBurstSize.SIZE_128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.denominator.html">cocotb_wrapper.axi.AxiBurstSize.denominator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.imag.html">cocotb_wrapper.axi.AxiBurstSize.imag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.numerator.html">cocotb_wrapper.axi.AxiBurstSize.numerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.real.html">cocotb_wrapper.axi.AxiBurstSize.real</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cocotb_wrapper.axi.AxiLockType.html">cocotb_wrapper.axi.AxiLockType</a></li>
@@ -461,15 +472,41 @@ document.write(`
 <h1>cocotb_wrapper.axi.AxiBurstSize<a class="headerlink" href="#cocotb-wrapper-axi-axiburstsize" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="cocotb_wrapper.axi.AxiBurstSize">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cocotb_wrapper.axi.</span></span><span class="sig-name descname"><span class="pre">AxiBurstSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cocotb_wrapper/axi.html#AxiBurstSize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cocotb_wrapper.axi.AxiBurstSize" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cocotb_wrapper.axi.</span></span><span class="sig-name descname"><span class="pre">AxiBurstSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cocotb_wrapper/axi.html#AxiBurstSize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cocotb_wrapper.axi.AxiBurstSize" title="Permalink to this definition">#</a></dt>
 <dd><p>The number of bytes in each data transfer in a write transaction.</p>
 <p>The burst size must be a power of 2, that is 1, 2, 4, 8, 16, 32, 64, or 128
 bytes.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="cocotb_wrapper.axi.AxiBurstSize.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocotb_wrapper.axi.AxiBurstSize.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocotb_wrapper.axi.AxiBurstSize.__init__" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
+<p class="rubric">Methods</p>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.as_integer_ratio.html#cocotb_wrapper.axi.AxiBurstSize.as_integer_ratio" title="cocotb_wrapper.axi.AxiBurstSize.as_integer_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">as_integer_ratio</span></code></a>()</p></td>
+<td><p>Return a pair of integers, whose ratio is equal to the original int.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.bit_count.html#cocotb_wrapper.axi.AxiBurstSize.bit_count" title="cocotb_wrapper.axi.AxiBurstSize.bit_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bit_count</span></code></a>()</p></td>
+<td><p>Number of ones in the binary representation of the absolute value of self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.bit_length.html#cocotb_wrapper.axi.AxiBurstSize.bit_length" title="cocotb_wrapper.axi.AxiBurstSize.bit_length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bit_length</span></code></a>()</p></td>
+<td><p>Number of bits necessary to represent self in binary.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.conjugate.html#cocotb_wrapper.axi.AxiBurstSize.conjugate" title="cocotb_wrapper.axi.AxiBurstSize.conjugate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conjugate</span></code></a></p></td>
+<td><p>Returns self, the complex conjugate of any int.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.from_bytes.html#cocotb_wrapper.axi.AxiBurstSize.from_bytes" title="cocotb_wrapper.axi.AxiBurstSize.from_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_bytes</span></code></a>([byteorder, signed])</p></td>
+<td><p>Return the integer represented by the given array of bytes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.is_integer.html#cocotb_wrapper.axi.AxiBurstSize.is_integer" title="cocotb_wrapper.axi.AxiBurstSize.is_integer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_integer</span></code></a>()</p></td>
+<td><p>Returns True.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.to_bytes.html#cocotb_wrapper.axi.AxiBurstSize.to_bytes" title="cocotb_wrapper.axi.AxiBurstSize.to_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_bytes</span></code></a>([length, byteorder, signed])</p></td>
+<td><p>Return an array of bytes representing an integer.</p></td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Attributes</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
@@ -497,6 +534,18 @@ bytes.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.SIZE_128.html#cocotb_wrapper.axi.AxiBurstSize.SIZE_128" title="cocotb_wrapper.axi.AxiBurstSize.SIZE_128"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SIZE_128</span></code></a></p></td>
 <td><p>A burst size of 128.</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.denominator.html#cocotb_wrapper.axi.AxiBurstSize.denominator" title="cocotb_wrapper.axi.AxiBurstSize.denominator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">denominator</span></code></a></p></td>
+<td><p>the denominator of a rational number in lowest terms</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.imag.html#cocotb_wrapper.axi.AxiBurstSize.imag" title="cocotb_wrapper.axi.AxiBurstSize.imag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imag</span></code></a></p></td>
+<td><p>the imaginary part of a complex number</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.numerator.html#cocotb_wrapper.axi.AxiBurstSize.numerator" title="cocotb_wrapper.axi.AxiBurstSize.numerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numerator</span></code></a></p></td>
+<td><p>the numerator of a rational number in lowest terms</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="cocotb_wrapper.axi.AxiBurstSize.real.html#cocotb_wrapper.axi.AxiBurstSize.real" title="cocotb_wrapper.axi.AxiBurstSize.real"><code class="xref py py-obj docutils literal notranslate"><span class="pre">real</span></code></a></p></td>
+<td><p>the real part of a complex number</p></td>
+</tr>
 </tbody>
 </table>
 </dd></dl>
@@ -514,20 +563,20 @@ bytes.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cocotb_wrapper.axi.AxiBurstType.WRAP.html"
+       href="cocotb_wrapper.axi.AxiBurstType.real.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">cocotb_wrapper.axi.AxiBurstType.WRAP</p>
+        <p class="prev-next-title">cocotb_wrapper.axi.AxiBurstType.real</p>
       </div>
     </a>
     <a class="right-next"
-       href="cocotb_wrapper.axi.AxiBurstSize.SIZE_1.html"
+       href="cocotb_wrapper.axi.AxiBurstSize.as_integer_ratio.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">cocotb_wrapper.axi.AxiBurstSize.SIZE_1</p>
+        <p class="prev-next-title">cocotb_wrapper.axi.AxiBurstSize.as_integer_ratio</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

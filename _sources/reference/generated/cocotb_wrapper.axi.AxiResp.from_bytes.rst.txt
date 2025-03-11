@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiResp.from\_bytes
+=======================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiResp.from_bytes

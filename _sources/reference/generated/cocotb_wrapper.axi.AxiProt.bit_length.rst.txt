@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiProt.bit\_length
+=======================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiProt.bit_length

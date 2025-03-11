@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiResp.numerator
+=====================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiResp.numerator

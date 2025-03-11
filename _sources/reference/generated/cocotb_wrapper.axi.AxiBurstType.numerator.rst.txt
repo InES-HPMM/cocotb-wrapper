@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiBurstType.numerator
+==========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiBurstType.numerator

@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiBurstType.imag
+=====================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiBurstType.imag

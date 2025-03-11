@@ -9,6 +9,34 @@
    .. automethod:: __init__
 
    
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~AxiResp.as_integer_ratio
+   
+   
+      ~AxiResp.bit_count
+   
+   
+      ~AxiResp.bit_length
+   
+   
+      ~AxiResp.conjugate
+   
+   
+      ~AxiResp.from_bytes
+   
+   
+      ~AxiResp.is_integer
+   
+   
+      ~AxiResp.to_bytes
+   
+   
    
 
    
@@ -22,5 +50,9 @@
       ~AxiResp.EXOKAY
       ~AxiResp.SLVERR
       ~AxiResp.DECERR
+      ~AxiResp.denominator
+      ~AxiResp.imag
+      ~AxiResp.numerator
+      ~AxiResp.real
    
    

@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiBurstType.conjugate
+==========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiBurstType.conjugate

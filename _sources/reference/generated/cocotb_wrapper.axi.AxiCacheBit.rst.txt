@@ -9,6 +9,34 @@
    .. automethod:: __init__
 
    
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~AxiCacheBit.as_integer_ratio
+   
+   
+      ~AxiCacheBit.bit_count
+   
+   
+      ~AxiCacheBit.bit_length
+   
+   
+      ~AxiCacheBit.conjugate
+   
+   
+      ~AxiCacheBit.from_bytes
+   
+   
+      ~AxiCacheBit.is_integer
+   
+   
+      ~AxiCacheBit.to_bytes
+   
+   
    
 
    
@@ -22,5 +50,9 @@
       ~AxiCacheBit.M
       ~AxiCacheBit.RA
       ~AxiCacheBit.WA
+      ~AxiCacheBit.denominator
+      ~AxiCacheBit.imag
+      ~AxiCacheBit.numerator
+      ~AxiCacheBit.real
    
    

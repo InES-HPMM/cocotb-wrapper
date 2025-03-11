@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiProt.to\_bytes
+=====================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiProt.to_bytes

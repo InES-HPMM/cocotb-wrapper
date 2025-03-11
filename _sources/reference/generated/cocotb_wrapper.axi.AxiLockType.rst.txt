@@ -9,6 +9,34 @@
    .. automethod:: __init__
 
    
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+   
+   
+      ~AxiLockType.as_integer_ratio
+   
+   
+      ~AxiLockType.bit_count
+   
+   
+      ~AxiLockType.bit_length
+   
+   
+      ~AxiLockType.conjugate
+   
+   
+      ~AxiLockType.from_bytes
+   
+   
+      ~AxiLockType.is_integer
+   
+   
+      ~AxiLockType.to_bytes
+   
+   
    
 
    
@@ -20,5 +48,9 @@
    
       ~AxiLockType.NORMAL
       ~AxiLockType.EXCLUSIVE
+      ~AxiLockType.denominator
+      ~AxiLockType.imag
+      ~AxiLockType.numerator
+      ~AxiLockType.real
    
    

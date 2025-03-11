@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiLockType.imag
+====================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiLockType.imag

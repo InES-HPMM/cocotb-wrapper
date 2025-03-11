@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiLockType.bit\_count
+==========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiLockType.bit_count

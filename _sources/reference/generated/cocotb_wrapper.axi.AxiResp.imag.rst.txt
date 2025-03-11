@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiResp.imag
+================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. autoattribute:: AxiResp.imag

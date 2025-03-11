@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiBurstSize.bit\_length
+============================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiBurstSize.bit_length

@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiResp.is\_integer
+=======================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiResp.is_integer

@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiCacheBit.as\_integer\_ratio
+==================================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiCacheBit.as_integer_ratio

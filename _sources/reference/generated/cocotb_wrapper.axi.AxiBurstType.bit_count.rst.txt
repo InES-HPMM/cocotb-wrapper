@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiBurstType.bit\_count
+===========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiBurstType.bit_count

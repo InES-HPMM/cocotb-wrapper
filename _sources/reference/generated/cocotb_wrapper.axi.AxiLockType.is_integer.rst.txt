@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiLockType.is\_integer
+===========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiLockType.is_integer

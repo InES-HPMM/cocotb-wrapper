@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiCacheBit.is\_integer
+===========================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiCacheBit.is_integer

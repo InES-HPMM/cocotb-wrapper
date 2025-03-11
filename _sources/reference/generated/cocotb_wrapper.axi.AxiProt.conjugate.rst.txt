@@ -1,0 +1,6 @@
+cocotb\_wrapper.axi.AxiProt.conjugate
+=====================================
+
+.. currentmodule:: cocotb_wrapper.axi
+
+.. automethod:: AxiProt.conjugate
