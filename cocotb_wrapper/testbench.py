@@ -59,9 +59,9 @@ class Testbench:
         self._log = SimLog(self.name)
 
         self._setup: Callable[[HierarchyObject], Awaitable[None]] | None = None
-        self._teardown: Callable[
-            [HierarchyObject], Awaitable[None]
-        ] | None = None
+        self._teardown: Callable[[HierarchyObject], Awaitable[None]] | None = (
+            None
+        )
 
     @property
     def name(self) -> str:
