@@ -27,11 +27,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/katex-math.css?v=91adb8b6" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
   
@@ -422,25 +422,25 @@ document.write(`
 
 <span class="sd">&quot;&quot;&quot;Provide a wrapper classes around `cocotbext-axi &lt;https://github.com/alexforencich/cocotbext-axi&gt;`_.&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 
 <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Thierry Delafontaine&quot;</span>
 <span class="n">__mail__</span> <span class="o">=</span> <span class="s2">&quot;deaa@zhaw.ch&quot;</span>
 <span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;2022 ZHAW Institute of Embedded Systems&quot;</span>
 <span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;2022-12-20&quot;</span>
 
-<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Iterator</span>
-<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span><span class="p">,</span> <span class="n">IntFlag</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
-<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">getrandbits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">IntEnum</span><span class="p">,</span> <span class="n">IntFlag</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">cycle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">getrandbits</span>
 
-<span class="kn">import</span> <span class="nn">cocotbext.axi</span> <span class="k">as</span> <span class="nn">axi</span>
-<span class="kn">from</span> <span class="nn">cocotb.handle</span> <span class="kn">import</span> <span class="n">HierarchyObject</span>
-<span class="kn">from</span> <span class="nn">cocotb.log</span> <span class="kn">import</span> <span class="n">SimLog</span>
-<span class="kn">from</span> <span class="nn">cocotb.triggers</span> <span class="kn">import</span> <span class="n">Event</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cocotbext.axi</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">axi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cocotb.handle</span><span class="w"> </span><span class="kn">import</span> <span class="n">HierarchyObject</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cocotb.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimLog</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cocotb.triggers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Event</span>
 
 
-<span class="k">def</span> <span class="nf">bits_to_bytes</span><span class="p">(</span><span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bits_to_bytes</span><span class="p">(</span><span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a number of bits to bytes.</span>
 
 <span class="sd">    Args:</span>
@@ -452,7 +452,7 @@ document.write(`
     <span class="k">return</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="o">//</span> <span class="mi">8</span>
 
 
-<div class="viewcode-block" id="AxiBurstType"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiBurstType.html#cocotb_wrapper.axi.AxiBurstType">[docs]</a><span class="k">class</span> <span class="nc">AxiBurstType</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+<div class="viewcode-block" id="AxiBurstType"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiBurstType.html#cocotb_wrapper.axi.AxiBurstType">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiBurstType</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The burst type used during the AXI write transaction.&quot;&quot;&quot;</span>
 
     <span class="n">FIXED</span> <span class="o">=</span> <span class="mb">0b00</span>
@@ -506,7 +506,7 @@ document.write(`
 <span class="sd">    &quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="AxiBurstSize"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiBurstSize.html#cocotb_wrapper.axi.AxiBurstSize">[docs]</a><span class="k">class</span> <span class="nc">AxiBurstSize</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+<div class="viewcode-block" id="AxiBurstSize"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiBurstSize.html#cocotb_wrapper.axi.AxiBurstSize">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiBurstSize</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The number of bytes in each data transfer in a write transaction.</span>
 
 <span class="sd">    The burst size must be a power of 2, that is 1, 2, 4, 8, 16, 32, 64, or 128</span>
@@ -531,7 +531,7 @@ document.write(`
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A burst size of 128.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="AxiLockType"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLockType.html#cocotb_wrapper.axi.AxiLockType">[docs]</a><span class="k">class</span> <span class="nc">AxiLockType</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+<div class="viewcode-block" id="AxiLockType"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLockType.html#cocotb_wrapper.axi.AxiLockType">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiLockType</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The AXI Lock type supported by AXI3.</span>
 
 <span class="sd">    AXI4 does not support locked transactions. In AXI3 the **AxLOCK** signals</span>
@@ -544,7 +544,7 @@ document.write(`
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Exclusize access.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="AxiCacheBit"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiCacheBit.html#cocotb_wrapper.axi.AxiCacheBit">[docs]</a><span class="k">class</span> <span class="nc">AxiCacheBit</span><span class="p">(</span><span class="n">IntFlag</span><span class="p">):</span>
+<div class="viewcode-block" id="AxiCacheBit"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiCacheBit.html#cocotb_wrapper.axi.AxiCacheBit">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiCacheBit</span><span class="p">(</span><span class="n">IntFlag</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The different bits of the **AxCACHE** attribute.</span>
 
 <span class="sd">    The **AxCACHE** signals specify the Bufferabel, Modifiable, and Allocate</span>
@@ -579,7 +579,7 @@ document.write(`
 <span class="sd">    &quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="AxiProt"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiProt.html#cocotb_wrapper.axi.AxiProt">[docs]</a><span class="k">class</span> <span class="nc">AxiProt</span><span class="p">(</span><span class="n">IntFlag</span><span class="p">):</span>
+<div class="viewcode-block" id="AxiProt"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiProt.html#cocotb_wrapper.axi.AxiProt">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiProt</span><span class="p">(</span><span class="n">IntFlag</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The permission signals that can be used to protect against illegal transactions.&quot;&quot;&quot;</span>
 
     <span class="n">PRIVILEGED</span> <span class="o">=</span> <span class="mb">0b001</span>
@@ -593,7 +593,7 @@ document.write(`
 <span class="sd">    &quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="AxiResp"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiResp.html#cocotb_wrapper.axi.AxiResp">[docs]</a><span class="k">class</span> <span class="nc">AxiResp</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+<div class="viewcode-block" id="AxiResp"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiResp.html#cocotb_wrapper.axi.AxiResp">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiResp</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The response signals.&quot;&quot;&quot;</span>
 
     <span class="n">OKAY</span> <span class="o">=</span> <span class="mb">0b00</span>
@@ -622,14 +622,14 @@ document.write(`
 <span class="sd">    &quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="AxiMaster"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.html#cocotb_wrapper.axi.AxiMaster">[docs]</a><span class="k">class</span> <span class="nc">AxiMaster</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiMaster"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.html#cocotb_wrapper.axi.AxiMaster">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiMaster</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A Wrapper around `cocotbext-axi AXI &lt;https://github.com/alexforencich/cocotbext-axi#axi-and-axi-lite-master&gt;`_.</span>
 
 <span class="sd">    Todo:</span>
 <span class="sd">        Add a usage example.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="AxiMaster.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.html#cocotb_wrapper.axi.AxiMaster.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="AxiMaster.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.html#cocotb_wrapper.axi.AxiMaster.__init__">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">bus_prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">clk</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -653,7 +653,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">_max_burst_length</span> <span class="o">=</span> <span class="n">max_burst_length</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">SimLog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bus_prefix</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiMaster.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.setup.html#cocotb_wrapper.axi.AxiMaster.setup">[docs]</a>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiMaster.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.setup.html#cocotb_wrapper.axi.AxiMaster.setup">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Setup the AXI source.</span>
 
 <span class="sd">        Args:</span>
@@ -671,7 +671,7 @@ document.write(`
             <span class="n">max_burst_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_burst_length</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiMaster.write"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.write.html#cocotb_wrapper.axi.AxiMaster.write">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">write</span><span class="p">(</span>
+<div class="viewcode-block" id="AxiMaster.write"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.write.html#cocotb_wrapper.axi.AxiMaster.write">[docs]</a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">,</span>
@@ -720,7 +720,7 @@ document.write(`
             <span class="n">wuser</span><span class="o">=</span><span class="n">wuser</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiMaster.read"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.read.html#cocotb_wrapper.axi.AxiMaster.read">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">read</span><span class="p">(</span>
+<div class="viewcode-block" id="AxiMaster.read"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.read.html#cocotb_wrapper.axi.AxiMaster.read">[docs]</a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -770,7 +770,7 @@ document.write(`
             <span class="n">wuser</span><span class="o">=</span><span class="n">wuser</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiMaster.set_idle_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.set_idle_generator.html#cocotb_wrapper.axi.AxiMaster.set_idle_generator">[docs]</a>    <span class="k">def</span> <span class="nf">set_idle_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiMaster.set_idle_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.set_idle_generator.html#cocotb_wrapper.axi.AxiMaster.set_idle_generator">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_idle_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Toggle pauses on the write bus lanes given a generator function.</span>
 
 <span class="sd">        Args:</span>
@@ -784,7 +784,7 @@ document.write(`
         <span class="p">]:</span>
             <span class="n">channel</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiMaster.set_backpressure_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.set_backpressure_generator.html#cocotb_wrapper.axi.AxiMaster.set_backpressure_generator">[docs]</a>    <span class="k">def</span> <span class="nf">set_backpressure_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiMaster.set_backpressure_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.set_backpressure_generator.html#cocotb_wrapper.axi.AxiMaster.set_backpressure_generator">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_backpressure_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Toggle pauses on the read bus lanes given a generator function.</span>
 
 <span class="sd">        Args:</span>
@@ -797,25 +797,25 @@ document.write(`
         <span class="p">]:</span>
             <span class="n">channel</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiMaster.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.disable.html#cocotb_wrapper.axi.AxiMaster.disable">[docs]</a>    <span class="k">def</span> <span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiMaster.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.disable.html#cocotb_wrapper.axi.AxiMaster.disable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Disable the AXI master interface.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_idle_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_backpressure_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">]))</span></div>
 
-<div class="viewcode-block" id="AxiMaster.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.enable.html#cocotb_wrapper.axi.AxiMaster.enable">[docs]</a>    <span class="k">def</span> <span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiMaster.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiMaster.enable.html#cocotb_wrapper.axi.AxiMaster.enable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Enable the AXI master interface.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_idle_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">0</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_backpressure_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">0</span><span class="p">]))</span></div></div>
 
 
-<div class="viewcode-block" id="AxiRam"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.html#cocotb_wrapper.axi.AxiRam">[docs]</a><span class="k">class</span> <span class="nc">AxiRam</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiRam"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.html#cocotb_wrapper.axi.AxiRam">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiRam</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A Wrapper around `cocotbext-axi AXI RAM &lt;https://github.com/alexforencich/cocotbext-axi#axi-and-axi-lite-ram&gt;`_.</span>
 
 <span class="sd">    Todo:</span>
 <span class="sd">        Add a usage example.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="AxiRam.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.html#cocotb_wrapper.axi.AxiRam.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="AxiRam.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.html#cocotb_wrapper.axi.AxiRam.__init__">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">bus_prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">clk</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -840,7 +840,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="n">size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">SimLog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bus_prefix</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiRam.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.setup.html#cocotb_wrapper.axi.AxiRam.setup">[docs]</a>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiRam.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.setup.html#cocotb_wrapper.axi.AxiRam.setup">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Setup the AXI RAM.</span>
 
 <span class="sd">        Args:</span>
@@ -858,7 +858,7 @@ document.write(`
             <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiRam.write"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.write.html#cocotb_wrapper.axi.AxiRam.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiRam.write"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.write.html#cocotb_wrapper.axi.AxiRam.write">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Write `data` to the `address`.</span>
 
 <span class="sd">        Args:</span>
@@ -867,7 +867,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ram</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiRam.read"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.read.html#cocotb_wrapper.axi.AxiRam.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiRam.read"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.read.html#cocotb_wrapper.axi.AxiRam.read">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Read `length` bytes from `address`.</span>
 
 <span class="sd">        Args:</span>
@@ -879,7 +879,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ram</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">length</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AxiRam.hexdump"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.hexdump.html#cocotb_wrapper.axi.AxiRam.hexdump">[docs]</a>    <span class="k">def</span> <span class="nf">hexdump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;RAM&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiRam.hexdump"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.hexdump.html#cocotb_wrapper.axi.AxiRam.hexdump">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">hexdump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;RAM&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Dump the content of the RAM to the stdout.</span>
 
 <span class="sd">        Args:</span>
@@ -889,7 +889,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ram</span><span class="o">.</span><span class="n">hexdump</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">prefix</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiRam.set_idle_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.set_idle_generator.html#cocotb_wrapper.axi.AxiRam.set_idle_generator">[docs]</a>    <span class="k">def</span> <span class="nf">set_idle_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiRam.set_idle_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.set_idle_generator.html#cocotb_wrapper.axi.AxiRam.set_idle_generator">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_idle_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Toggle pauses on the write bus lanes given a generator function.</span>
 
 <span class="sd">        Args:</span>
@@ -902,7 +902,7 @@ document.write(`
         <span class="p">]:</span>
             <span class="n">channel</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiRam.set_backpressure_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.set_backpressure_generator.html#cocotb_wrapper.axi.AxiRam.set_backpressure_generator">[docs]</a>    <span class="k">def</span> <span class="nf">set_backpressure_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiRam.set_backpressure_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.set_backpressure_generator.html#cocotb_wrapper.axi.AxiRam.set_backpressure_generator">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_backpressure_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Toggle pauses on the read bus lanes given a generator function.</span>
 
 <span class="sd">        Args:</span>
@@ -916,25 +916,25 @@ document.write(`
         <span class="p">]:</span>
             <span class="n">channel</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiRam.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.disable.html#cocotb_wrapper.axi.AxiRam.disable">[docs]</a>    <span class="k">def</span> <span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiRam.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.disable.html#cocotb_wrapper.axi.AxiRam.disable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Disable the AXI RAM.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_idle_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_backpressure_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">]))</span></div>
 
-<div class="viewcode-block" id="AxiRam.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.enable.html#cocotb_wrapper.axi.AxiRam.enable">[docs]</a>    <span class="k">def</span> <span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiRam.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiRam.enable.html#cocotb_wrapper.axi.AxiRam.enable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Enable the AXI RAM.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_idle_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">0</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_backpressure_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">0</span><span class="p">]))</span></div></div>
 
 
-<div class="viewcode-block" id="RandomAxiPayloadGenerator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiPayloadGenerator">[docs]</a><span class="k">class</span> <span class="nc">RandomAxiPayloadGenerator</span><span class="p">:</span>
+<div class="viewcode-block" id="RandomAxiPayloadGenerator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiPayloadGenerator">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">RandomAxiPayloadGenerator</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A generator class that gives back a random payload.</span>
 
 <span class="sd">    Todo:</span>
 <span class="sd">        Add a usage example.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="RandomAxiPayloadGenerator.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiPayloadGenerator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_width_bits</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<div class="viewcode-block" id="RandomAxiPayloadGenerator.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiPayloadGenerator.__init__">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_width_bits</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize an instance.</span>
 
 <span class="sd">        Args:</span>
@@ -942,7 +942,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data_width_bits</span> <span class="o">=</span> <span class="n">data_width_bits</span></div>
 
-<div class="viewcode-block" id="RandomAxiPayloadGenerator.get_payload"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiPayloadGenerator.get_payload.html#cocotb_wrapper.axi.RandomAxiPayloadGenerator.get_payload">[docs]</a>    <span class="k">def</span> <span class="nf">get_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<div class="viewcode-block" id="RandomAxiPayloadGenerator.get_payload"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiPayloadGenerator.get_payload.html#cocotb_wrapper.axi.RandomAxiPayloadGenerator.get_payload">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a random payload.</span>
 
 <span class="sd">        Returns:</span>
@@ -953,14 +953,14 @@ document.write(`
         <span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="AxiLiteMaster"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.html#cocotb_wrapper.axi.AxiLiteMaster">[docs]</a><span class="k">class</span> <span class="nc">AxiLiteMaster</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteMaster"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.html#cocotb_wrapper.axi.AxiLiteMaster">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiLiteMaster</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A wrapper class around `cocotbext-axi AXI-Lite Master &lt;https://github.com/alexforencich/cocotbext-axi#axi-and-axi-lite-master&gt;`_.</span>
 
 <span class="sd">    Todo:</span>
 <span class="sd">        Add a usage example.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="AxiLiteMaster.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.html#cocotb_wrapper.axi.AxiLiteMaster.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="AxiLiteMaster.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.html#cocotb_wrapper.axi.AxiLiteMaster.__init__">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">bus_prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">clk</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -981,7 +981,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">_reset_active_level</span> <span class="o">=</span> <span class="n">reset_active_level</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">SimLog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bus_prefix</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteMaster.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.setup.html#cocotb_wrapper.axi.AxiLiteMaster.setup">[docs]</a>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteMaster.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.setup.html#cocotb_wrapper.axi.AxiLiteMaster.setup">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Setup the AXI-Lite source.</span>
 
 <span class="sd">        Args:</span>
@@ -998,7 +998,7 @@ document.write(`
             <span class="n">reset_active_level</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reset_active_level</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteMaster.write"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.write.html#cocotb_wrapper.axi.AxiLiteMaster.write">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">write</span><span class="p">(</span>
+<div class="viewcode-block" id="AxiLiteMaster.write"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.write.html#cocotb_wrapper.axi.AxiLiteMaster.write">[docs]</a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">,</span>
@@ -1016,7 +1016,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">prot</span><span class="o">=</span><span class="n">prot</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteMaster.read"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.read.html#cocotb_wrapper.axi.AxiLiteMaster.read">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">read</span><span class="p">(</span>
+<div class="viewcode-block" id="AxiLiteMaster.read"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.read.html#cocotb_wrapper.axi.AxiLiteMaster.read">[docs]</a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -1035,7 +1035,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">prot</span><span class="o">=</span><span class="n">prot</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteMaster.set_idle_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.set_idle_generator.html#cocotb_wrapper.axi.AxiLiteMaster.set_idle_generator">[docs]</a>    <span class="k">def</span> <span class="nf">set_idle_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteMaster.set_idle_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.set_idle_generator.html#cocotb_wrapper.axi.AxiLiteMaster.set_idle_generator">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_idle_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Toggle pauses on the write bus lanes given a generator function.</span>
 
 <span class="sd">        Args:</span>
@@ -1049,7 +1049,7 @@ document.write(`
         <span class="p">]:</span>
             <span class="n">channel</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteMaster.set_backpressure_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.set_backpressure_generator.html#cocotb_wrapper.axi.AxiLiteMaster.set_backpressure_generator">[docs]</a>    <span class="k">def</span> <span class="nf">set_backpressure_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteMaster.set_backpressure_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.set_backpressure_generator.html#cocotb_wrapper.axi.AxiLiteMaster.set_backpressure_generator">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_backpressure_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Toggle pauses on the read bus lanes given a generator function.</span>
 
 <span class="sd">        Args:</span>
@@ -1062,25 +1062,25 @@ document.write(`
         <span class="p">]:</span>
             <span class="n">channel</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteMaster.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.disable.html#cocotb_wrapper.axi.AxiLiteMaster.disable">[docs]</a>    <span class="k">def</span> <span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteMaster.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.disable.html#cocotb_wrapper.axi.AxiLiteMaster.disable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Disable the AXI-Lite master interface.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_idle_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_backpressure_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">]))</span></div>
 
-<div class="viewcode-block" id="AxiLiteMaster.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.enable.html#cocotb_wrapper.axi.AxiLiteMaster.enable">[docs]</a>    <span class="k">def</span> <span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteMaster.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteMaster.enable.html#cocotb_wrapper.axi.AxiLiteMaster.enable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Enable the AXI-Lite master interface.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_idle_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">0</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_backpressure_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">0</span><span class="p">]))</span></div></div>
 
 
-<div class="viewcode-block" id="AxiLiteRam"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.html#cocotb_wrapper.axi.AxiLiteRam">[docs]</a><span class="k">class</span> <span class="nc">AxiLiteRam</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteRam"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.html#cocotb_wrapper.axi.AxiLiteRam">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiLiteRam</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A Wrapper around `cocotbext-axi AXI-Lite RAM &lt;https://github.com/alexforencich/cocotbext-axi#axi-and-axi-lite-ram&gt;`_.</span>
 
 <span class="sd">    Todo:</span>
 <span class="sd">        Add a usage example.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="AxiLiteRam.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.html#cocotb_wrapper.axi.AxiLiteRam.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="AxiLiteRam.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.html#cocotb_wrapper.axi.AxiLiteRam.__init__">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">bus_prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">clk</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -1105,7 +1105,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="n">size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">SimLog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bus_prefix</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteRam.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.setup.html#cocotb_wrapper.axi.AxiLiteRam.setup">[docs]</a>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteRam.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.setup.html#cocotb_wrapper.axi.AxiLiteRam.setup">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Setup the AXI-Lite RAM.</span>
 
 <span class="sd">        Args:</span>
@@ -1123,7 +1123,7 @@ document.write(`
             <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteRam.write"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.write.html#cocotb_wrapper.axi.AxiLiteRam.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteRam.write"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.write.html#cocotb_wrapper.axi.AxiLiteRam.write">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Write `data` to the `address`.</span>
 
 <span class="sd">        Args:</span>
@@ -1132,7 +1132,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ram</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteRam.read"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.read.html#cocotb_wrapper.axi.AxiLiteRam.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteRam.read"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.read.html#cocotb_wrapper.axi.AxiLiteRam.read">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Read `length` bytes from `address`.</span>
 
 <span class="sd">        Args:</span>
@@ -1144,7 +1144,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ram</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">length</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AxiLiteRam.hexdump"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.hexdump.html#cocotb_wrapper.axi.AxiLiteRam.hexdump">[docs]</a>    <span class="k">def</span> <span class="nf">hexdump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;RAM&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteRam.hexdump"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.hexdump.html#cocotb_wrapper.axi.AxiLiteRam.hexdump">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">hexdump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;RAM&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Dump the content of the RAM to the stdout.</span>
 
 <span class="sd">        Args:</span>
@@ -1154,7 +1154,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ram</span><span class="o">.</span><span class="n">hexdump</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">prefix</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteRam.set_idle_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.set_idle_generator.html#cocotb_wrapper.axi.AxiLiteRam.set_idle_generator">[docs]</a>    <span class="k">def</span> <span class="nf">set_idle_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteRam.set_idle_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.set_idle_generator.html#cocotb_wrapper.axi.AxiLiteRam.set_idle_generator">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_idle_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Toggle pauses on the write bus lanes given a generator function.</span>
 
 <span class="sd">        Args:</span>
@@ -1167,7 +1167,7 @@ document.write(`
         <span class="p">]:</span>
             <span class="n">channel</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteRam.set_backpressure_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.set_backpressure_generator.html#cocotb_wrapper.axi.AxiLiteRam.set_backpressure_generator">[docs]</a>    <span class="k">def</span> <span class="nf">set_backpressure_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteRam.set_backpressure_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.set_backpressure_generator.html#cocotb_wrapper.axi.AxiLiteRam.set_backpressure_generator">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_backpressure_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Toggle pauses on the read bus lanes given a generator function.</span>
 
 <span class="sd">        Args:</span>
@@ -1181,25 +1181,25 @@ document.write(`
         <span class="p">]:</span>
             <span class="n">channel</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiLiteRam.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.disable.html#cocotb_wrapper.axi.AxiLiteRam.disable">[docs]</a>    <span class="k">def</span> <span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteRam.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.disable.html#cocotb_wrapper.axi.AxiLiteRam.disable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Disable the AXI-Lite RAM.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_idle_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_backpressure_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">]))</span></div>
 
-<div class="viewcode-block" id="AxiLiteRam.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.enable.html#cocotb_wrapper.axi.AxiLiteRam.enable">[docs]</a>    <span class="k">def</span> <span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiLiteRam.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiLiteRam.enable.html#cocotb_wrapper.axi.AxiLiteRam.enable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Enable the AXI-Lite RAM.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_idle_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">0</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_backpressure_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">0</span><span class="p">]))</span></div></div>
 
 
-<div class="viewcode-block" id="RandomAxiLitePayloadGenerator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.html#cocotb_wrapper.axi.RandomAxiLitePayloadGenerator">[docs]</a><span class="k">class</span> <span class="nc">RandomAxiLitePayloadGenerator</span><span class="p">:</span>
+<div class="viewcode-block" id="RandomAxiLitePayloadGenerator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.html#cocotb_wrapper.axi.RandomAxiLitePayloadGenerator">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">RandomAxiLitePayloadGenerator</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A generator class that gives back a random payload.</span>
 
 <span class="sd">    Todo:</span>
 <span class="sd">        Add a usage example.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="RandomAxiLitePayloadGenerator.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.html#cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_width_bits</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<div class="viewcode-block" id="RandomAxiLitePayloadGenerator.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.html#cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.__init__">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_width_bits</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize an instance.</span>
 
 <span class="sd">        Args:</span>
@@ -1207,7 +1207,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data_width_bits</span> <span class="o">=</span> <span class="n">data_width_bits</span></div>
 
-<div class="viewcode-block" id="RandomAxiLitePayloadGenerator.get_payload"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.get_payload.html#cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.get_payload">[docs]</a>    <span class="k">def</span> <span class="nf">get_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<div class="viewcode-block" id="RandomAxiLitePayloadGenerator.get_payload"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.get_payload.html#cocotb_wrapper.axi.RandomAxiLitePayloadGenerator.get_payload">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a random payload.</span>
 
 <span class="sd">        Returns:</span>
@@ -1218,14 +1218,14 @@ document.write(`
         <span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="AxiStreamSource"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.html#cocotb_wrapper.axi.AxiStreamSource">[docs]</a><span class="k">class</span> <span class="nc">AxiStreamSource</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiStreamSource"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.html#cocotb_wrapper.axi.AxiStreamSource">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiStreamSource</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A wrapper class around `cocotbext-axi AXI-Stream source &lt;https://github.com/alexforencich/cocotbext-axi#axi-stream&gt;`_.</span>
 
 <span class="sd">    Todo:</span>
 <span class="sd">        Add a usage example.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="AxiStreamSource.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.html#cocotb_wrapper.axi.AxiStreamSource.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="AxiStreamSource.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.html#cocotb_wrapper.axi.AxiStreamSource.__init__">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">bus_prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">tdata_width_bits</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -1249,7 +1249,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">_reset_active_level</span> <span class="o">=</span> <span class="n">reset_active_level</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">SimLog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bus_prefix</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiStreamSource.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.setup.html#cocotb_wrapper.axi.AxiStreamSource.setup">[docs]</a>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiStreamSource.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.setup.html#cocotb_wrapper.axi.AxiStreamSource.setup">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Setup the AXI-Stream source.</span>
 
 <span class="sd">        Args:</span>
@@ -1267,7 +1267,7 @@ document.write(`
             <span class="n">byte_lanes</span><span class="o">=</span><span class="n">bits_to_bytes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tdata_width_bits</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiStreamSource.write"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.write.html#cocotb_wrapper.axi.AxiStreamSource.write">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">write</span><span class="p">(</span>
+<div class="viewcode-block" id="AxiStreamSource.write"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.write.html#cocotb_wrapper.axi.AxiStreamSource.write">[docs]</a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">frame_data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">Event</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Write an AXI-Stream frame.</span>
@@ -1281,7 +1281,7 @@ document.write(`
         <span class="n">frame</span> <span class="o">=</span> <span class="n">axi</span><span class="o">.</span><span class="n">AxiStreamFrame</span><span class="p">(</span><span class="n">frame_data</span><span class="p">,</span> <span class="n">tx_complete</span><span class="o">=</span><span class="n">event</span><span class="p">)</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiStreamSource.set_pause_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.set_pause_generator.html#cocotb_wrapper.axi.AxiStreamSource.set_pause_generator">[docs]</a>    <span class="k">def</span> <span class="nf">set_pause_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiStreamSource.set_pause_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.set_pause_generator.html#cocotb_wrapper.axi.AxiStreamSource.set_pause_generator">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_pause_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Toggle pauses on the bus given a generator function.</span>
 
 <span class="sd">        Args:</span>
@@ -1290,23 +1290,23 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiStreamSource.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.disable.html#cocotb_wrapper.axi.AxiStreamSource.disable">[docs]</a>    <span class="k">def</span> <span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiStreamSource.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.disable.html#cocotb_wrapper.axi.AxiStreamSource.disable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Disable the AXI-Stream source.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">]))</span></div>
 
-<div class="viewcode-block" id="AxiStreamSource.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.enable.html#cocotb_wrapper.axi.AxiStreamSource.enable">[docs]</a>    <span class="k">def</span> <span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiStreamSource.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSource.enable.html#cocotb_wrapper.axi.AxiStreamSource.enable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Enable the AXI-Stream source.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">0</span><span class="p">]))</span></div></div>
 
 
-<div class="viewcode-block" id="AxiStreamSink"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.html#cocotb_wrapper.axi.AxiStreamSink">[docs]</a><span class="k">class</span> <span class="nc">AxiStreamSink</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiStreamSink"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.html#cocotb_wrapper.axi.AxiStreamSink">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">AxiStreamSink</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A Wrapper around `cocotbext-axi AXI-Stream sink &lt;https://github.com/alexforencich/cocotbext-axi#axi-stream&gt;`_.</span>
 
 <span class="sd">    Todo:</span>
 <span class="sd">        Add a usage example.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="AxiStreamSink.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.html#cocotb_wrapper.axi.AxiStreamSink.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="AxiStreamSink.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.html#cocotb_wrapper.axi.AxiStreamSink.__init__">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">bus_prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">tdata_width_bits</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -1330,7 +1330,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">_reset_active_level</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">reset_active_level</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">SimLog</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bus_prefix</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiStreamSink.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.setup.html#cocotb_wrapper.axi.AxiStreamSink.setup">[docs]</a>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiStreamSink.setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.setup.html#cocotb_wrapper.axi.AxiStreamSink.setup">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Setup the AXI-Stream sink.</span>
 
 <span class="sd">        Args:</span>
@@ -1348,7 +1348,7 @@ document.write(`
             <span class="n">byte_lanes</span><span class="o">=</span><span class="n">bits_to_bytes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tdata_width_bits</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiStreamSink.read"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.read.html#cocotb_wrapper.axi.AxiStreamSink.read">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiStreamSink.read"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.read.html#cocotb_wrapper.axi.AxiStreamSink.read">[docs]</a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Read an AXI-Stream frame.</span>
 
 <span class="sd">        Returns:</span>
@@ -1357,7 +1357,7 @@ document.write(`
         <span class="n">frame</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">frame</span><span class="o">.</span><span class="n">tdata</span>  <span class="c1"># type: ignore[no-any-return]</span></div>
 
-<div class="viewcode-block" id="AxiStreamSink.set_pause_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.set_pause_generator.html#cocotb_wrapper.axi.AxiStreamSink.set_pause_generator">[docs]</a>    <span class="k">def</span> <span class="nf">set_pause_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiStreamSink.set_pause_generator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.set_pause_generator.html#cocotb_wrapper.axi.AxiStreamSink.set_pause_generator">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_pause_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Toggle pauses on the bus given a generator function.</span>
 
 <span class="sd">        Args:</span>
@@ -1366,23 +1366,23 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AxiStreamSink.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.disable.html#cocotb_wrapper.axi.AxiStreamSink.disable">[docs]</a>    <span class="k">def</span> <span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiStreamSink.disable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.disable.html#cocotb_wrapper.axi.AxiStreamSink.disable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Disable the AXI-Stream sink.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">]))</span></div>
 
-<div class="viewcode-block" id="AxiStreamSink.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.enable.html#cocotb_wrapper.axi.AxiStreamSink.enable">[docs]</a>    <span class="k">def</span> <span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AxiStreamSink.enable"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.AxiStreamSink.enable.html#cocotb_wrapper.axi.AxiStreamSink.enable">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Enable the AXI-Stream sink.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_pause_generator</span><span class="p">(</span><span class="n">cycle</span><span class="p">([</span><span class="mi">0</span><span class="p">]))</span></div></div>
 
 
-<div class="viewcode-block" id="RandomAxiStreamPayloadGenerator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator">[docs]</a><span class="k">class</span> <span class="nc">RandomAxiStreamPayloadGenerator</span><span class="p">:</span>
+<div class="viewcode-block" id="RandomAxiStreamPayloadGenerator"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">RandomAxiStreamPayloadGenerator</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A generator class that gives back a random payload.</span>
 
 <span class="sd">    Todo:</span>
 <span class="sd">        Add a usage example.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="RandomAxiStreamPayloadGenerator.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame_length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data_width_bits</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<div class="viewcode-block" id="RandomAxiStreamPayloadGenerator.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.html#cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.__init__">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame_length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data_width_bits</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize an instance.</span>
 
 <span class="sd">        Args:</span>
@@ -1392,7 +1392,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">_frame_length</span> <span class="o">=</span> <span class="n">frame_length</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data_width_bits</span> <span class="o">=</span> <span class="n">data_width_bits</span></div>
 
-<div class="viewcode-block" id="RandomAxiStreamPayloadGenerator.get_payload"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.get_payload.html#cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.get_payload">[docs]</a>    <span class="k">def</span> <span class="nf">get_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<div class="viewcode-block" id="RandomAxiStreamPayloadGenerator.get_payload"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.get_payload.html#cocotb_wrapper.axi.RandomAxiStreamPayloadGenerator.get_payload">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a random payload.</span>
 
 <span class="sd">        Returns:</span>

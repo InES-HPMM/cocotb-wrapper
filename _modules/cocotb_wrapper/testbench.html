@@ -27,11 +27,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/katex-math.css?v=91adb8b6" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
   
@@ -426,28 +426,28 @@ document.write(`
 <span class="sd">use with cocotb testbenches.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 
 <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Thierry Delafontaine&quot;</span>
 <span class="n">__mail__</span> <span class="o">=</span> <span class="s2">&quot;deaa@zhaw.ch&quot;</span>
 <span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;2022 ZHAW Institute of Embedded Systems&quot;</span>
 <span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;2024-02-27&quot;</span>
 
-<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Awaitable</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Awaitable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
 
-<span class="kn">from</span> <span class="nn">cocotb</span> <span class="kn">import</span> <span class="n">start_soon</span><span class="p">,</span> <span class="n">test</span>
-<span class="kn">from</span> <span class="nn">cocotb.clock</span> <span class="kn">import</span> <span class="n">Clock</span>
-<span class="kn">from</span> <span class="nn">cocotb.handle</span> <span class="kn">import</span> <span class="n">HierarchyObject</span>
-<span class="kn">from</span> <span class="nn">cocotb.log</span> <span class="kn">import</span> <span class="n">SimLog</span>
-<span class="kn">from</span> <span class="nn">cocotb.triggers</span> <span class="kn">import</span> <span class="n">RisingEdge</span><span class="p">,</span> <span class="n">Timer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cocotb</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_soon</span><span class="p">,</span> <span class="n">test</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cocotb.clock</span><span class="w"> </span><span class="kn">import</span> <span class="n">Clock</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cocotb.handle</span><span class="w"> </span><span class="kn">import</span> <span class="n">HierarchyObject</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cocotb.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimLog</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cocotb.triggers</span><span class="w"> </span><span class="kn">import</span> <span class="n">RisingEdge</span><span class="p">,</span> <span class="n">Timer</span>
 
 
-<div class="viewcode-block" id="Testbench"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.html#cocotb_wrapper.testbench.Testbench">[docs]</a><span class="k">class</span> <span class="nc">Testbench</span><span class="p">:</span>
+<div class="viewcode-block" id="Testbench"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.html#cocotb_wrapper.testbench.Testbench">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">Testbench</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A cocotb testbench.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Testbench.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.html#cocotb_wrapper.testbench.Testbench.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="Testbench.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.html#cocotb_wrapper.testbench.Testbench.__init__">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">clk</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -477,7 +477,7 @@ document.write(`
         <span class="p">)</span></div>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the name of the device under test.</span>
 
 <span class="sd">        Returns:</span>
@@ -485,7 +485,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
 
-<div class="viewcode-block" id="Testbench.register_setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.register_setup.html#cocotb_wrapper.testbench.Testbench.register_setup">[docs]</a>    <span class="k">def</span> <span class="nf">register_setup</span><span class="p">(</span>
+<div class="viewcode-block" id="Testbench.register_setup"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.register_setup.html#cocotb_wrapper.testbench.Testbench.register_setup">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">register_setup</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span>
         <span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]]],</span>
@@ -498,7 +498,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_to_instance</span><span class="p">(</span><span class="s2">&quot;_setup&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Testbench.register_teardown"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.register_teardown.html#cocotb_wrapper.testbench.Testbench.register_teardown">[docs]</a>    <span class="k">def</span> <span class="nf">register_teardown</span><span class="p">(</span>
+<div class="viewcode-block" id="Testbench.register_teardown"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.register_teardown.html#cocotb_wrapper.testbench.Testbench.register_teardown">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">register_teardown</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span>
         <span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]]],</span>
@@ -511,7 +511,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_to_instance</span><span class="p">(</span><span class="s2">&quot;_teardown&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Testbench.register_test"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.register_test.html#cocotb_wrapper.testbench.Testbench.register_test">[docs]</a>    <span class="k">def</span> <span class="nf">register_test</span><span class="p">(</span>
+<div class="viewcode-block" id="Testbench.register_test"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.register_test.html#cocotb_wrapper.testbench.Testbench.register_test">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">register_test</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">timeout_time</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">timeout_unit</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;step&quot;</span><span class="p">,</span>
@@ -539,7 +539,7 @@ document.write(`
 <span class="sd">            A decorator function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">decorator</span><span class="p">(</span>
             <span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]</span>
         <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]:</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;Register the function as a cocotb test.</span>
@@ -552,7 +552,7 @@ document.write(`
 <span class="sd">            &quot;&quot;&quot;</span>
 
             <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-            <span class="k">async</span> <span class="k">def</span> <span class="nf">_test_function</span><span class="p">(</span><span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_test_function</span><span class="p">(</span><span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_setup_function</span><span class="p">()(</span><span class="n">dut</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Setup completed&quot;</span><span class="p">)</span>
                 <span class="k">await</span> <span class="n">f</span><span class="p">(</span><span class="n">dut</span><span class="p">)</span>
@@ -579,7 +579,7 @@ document.write(`
 
         <span class="k">return</span> <span class="n">decorator</span></div>
 
-<div class="viewcode-block" id="Testbench.reset"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.reset.html#cocotb_wrapper.testbench.Testbench.reset">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">,</span> <span class="n">time</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">units</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Testbench.reset"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.reset.html#cocotb_wrapper.testbench.Testbench.reset">[docs]</a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">,</span> <span class="n">time</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">units</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset the DUT.</span>
 
 <span class="sd">        Args:</span>
@@ -598,7 +598,7 @@ document.write(`
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Reset not available&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Testbench.start_clk"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.start_clk.html#cocotb_wrapper.testbench.Testbench.start_clk">[docs]</a>    <span class="k">def</span> <span class="nf">start_clk</span><span class="p">(</span>
+<div class="viewcode-block" id="Testbench.start_clk"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench.Testbench.start_clk.html#cocotb_wrapper.testbench.Testbench.start_clk">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">start_clk</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">,</span> <span class="n">period</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">units</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Start the clock.</span>
@@ -621,7 +621,7 @@ document.write(`
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Clock not available&quot;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">_add_to_instance</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_to_instance</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span>
@@ -637,7 +637,7 @@ document.write(`
 <span class="sd">            A decorator function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">decorator</span><span class="p">(</span>
             <span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]]</span>
         <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="nb">object</span><span class="p">]]:</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;Make the decorated function a method of the testbench.</span>
@@ -655,7 +655,7 @@ document.write(`
 
         <span class="k">return</span> <span class="n">decorator</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_default_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_default_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set up the testbench.</span>
 
 <span class="sd">        This function is the default setup function and is executed if no other</span>
@@ -667,7 +667,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">start_clk</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;ns&quot;</span><span class="p">)</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;ns&quot;</span><span class="p">)</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_default_teardown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_default_teardown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Teardown the testbench.</span>
 
 <span class="sd">        This function is the default teardown function and is executed if no</span>
@@ -678,7 +678,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;ns&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_get_new_test_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_new_test_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a new test ID.</span>
 
 <span class="sd">        Returns:</span>
@@ -688,7 +688,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">_test_id_counter</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="n">new_test_id</span>
 
-    <span class="k">def</span> <span class="nf">_get_setup_function</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_setup_function</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the setup function.</span>
@@ -701,7 +701,7 @@ document.write(`
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_setup</span>
 
-    <span class="k">def</span> <span class="nf">_get_teardown_function</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_teardown_function</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the teardown function.</span>
@@ -715,7 +715,7 @@ document.write(`
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_teardown</span></div>
 
 
-<div class="viewcode-block" id="_Test"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench._Test.html#cocotb_wrapper.testbench._Test">[docs]</a><span class="k">class</span> <span class="nc">_Test</span><span class="p">:</span>
+<div class="viewcode-block" id="_Test"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench._Test.html#cocotb_wrapper.testbench._Test">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">_Test</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A single test of a testbench.</span>
 
 <span class="sd">    This class is not intended to be instantiated directly. Instead use</span>
@@ -724,7 +724,7 @@ document.write(`
 <span class="sd">    :meth:`~cocotb_wrapper.testbench.Testbench.register_test`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="_Test.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench._Test.html#cocotb_wrapper.testbench._Test.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="_Test.__init__"><a class="viewcode-back" href="../../reference/generated/cocotb_wrapper.testbench._Test.html#cocotb_wrapper.testbench._Test.__init__">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">test_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">HierarchyObject</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="kc">None</span><span class="p">]],</span>
         <span class="n">test_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -752,7 +752,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">SimLog</span><span class="p">(</span><span class="n">test_function</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
 
         <span class="nd">@wraps</span><span class="p">(</span><span class="n">test_function</span><span class="p">)</span>
-        <span class="k">async</span> <span class="k">def</span> <span class="nf">_test_function</span><span class="p">(</span><span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_test_function</span><span class="p">(</span><span class="n">dut</span><span class="p">:</span> <span class="n">HierarchyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">dut</span><span class="o">.</span><span class="n">test_id</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_test_id</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;&#39;Set test_id&#39; to </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_test_id</span><span class="p">)</span>

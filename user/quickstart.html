@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/katex-math.css?v=91adb8b6" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
@@ -445,7 +445,7 @@ around <code class="docutils literal notranslate"><span class="pre">cocotbext-ax
 <section id="writing-tests-using-testbench">
 <h3>Writing tests using <code class="docutils literal notranslate"><span class="pre">Testbench</span></code><a class="headerlink" href="#writing-tests-using-testbench" title="Permalink to this heading">#</a></h3>
 <p>First, import the wrapper module with</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cocotb_wrapper</span> <span class="k">as</span> <span class="nn">ctw</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cocotb_wrapper</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ctw</span>
 </pre></div>
 </div>
 <p>Writing tests with the <code class="docutils literal notranslate"><span class="pre">Testbench</span></code> class is a lot less verbose. First, we create
@@ -460,13 +460,13 @@ a new <code class="docutils literal notranslate"><span class="pre">Testbench</sp
 required before each test we want to perform. A register and teardown function
 can be registered using the <code class="docutils literal notranslate"><span class="pre">register_setup</span></code> and <code class="docutils literal notranslate"><span class="pre">register_teardown</span></code> decorators.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@TB</span><span class="o">.</span><span class="n">register_setup</span><span class="p">()</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">dut</span><span class="p">):</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="n">dut</span><span class="p">):</span>
   <span class="n">TB</span><span class="o">.</span><span class="n">start_clk</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;ns&quot;</span><span class="p">)</span>
   <span class="c1"># Do some initialization</span>
   <span class="k">await</span> <span class="n">TB</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;ns&quot;</span><span class="p">)</span>
 
 <span class="nd">@TB</span><span class="o">.</span><span class="n">register_teardown</span><span class="p">()</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">teardown</span><span class="p">(</span><span class="n">dut</span><span class="p">):</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">teardown</span><span class="p">(</span><span class="n">dut</span><span class="p">):</span>
   <span class="c1"># Do some teardown</span>
   <span class="k">await</span> <span class="n">TB</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;ns&quot;</span><span class="p">)</span>
 </pre></div>
@@ -478,7 +478,7 @@ and resets have to be driven manually. If no setup or teardown functions are
 registered, the default ones are executed, which are the ones showed above.</p>
 <p>Finally, we can register tests with</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@TB</span><span class="o">.</span><span class="n">register_test</span><span class="p">()</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">test_add</span><span class="p">(</span><span class="n">dut</span><span class="p">):</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">test_add</span><span class="p">(</span><span class="n">dut</span><span class="p">):</span>
   <span class="c1"># Do some stuff</span>
   <span class="k">assert</span> <span class="c1"># Some condition</span>
 </pre></div>
