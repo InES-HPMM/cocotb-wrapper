@@ -20,13 +20,11 @@ PROJECT_ROOT = os.path.join(os.path.dirname(__file__), "..")
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 # Read pyproject.toml
-pyproject = toml.load(os.path.join(PROJECT_ROOT, "pyproject.toml"))["tool"][
-    "poetry"
-]
+pyproject = toml.load(os.path.join(PROJECT_ROOT, "pyproject.toml"))["project"]
 
 project = pyproject["name"]
 copyright = "2023, ZHAW Institute of Embedded Systems"
-author = pyproject["authors"][0]
+author = pyproject["authors"][0]["name"]
 release = metadata.version("cocotb-wrapper")
 version = re.sub(r"(\d+\.\d+)(?:\.\d+|)(.*)", r"\1\2", release)
 version = re.sub(r"(\.dev\d+).*?$", r"\1", version)

@@ -31,15 +31,14 @@ repos:
           - types-toml
           - typing_extensions
         exclude: tests/
-  - repo: https://github.com/python-poetry/poetry
-    rev: 1.8.0
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.6.6
     hooks:
-      - id: poetry-check
-      - id: poetry-lock
-      - id: poetry-export
+      - id: uv-lock
+      - id: uv-export
         args: ["-o", "requirements.txt"]
-      - id: poetry-export
-        args: ["--with", "docs", "-o", "docs/requirements.txt"]
+      - id: uv-export
+        args: ["--group", "docs", "-o", "docs/requirements.txt"]
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v4.0.0-alpha.8
     hooks:
