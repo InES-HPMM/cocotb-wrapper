@@ -59,9 +59,9 @@ class Testbench:
         self._log = SimLog(self.name)
 
         self._setup: Callable[[HierarchyObject], Awaitable[None]] | None = None
-        self._teardown: Callable[[HierarchyObject], Awaitable[None]] | None = (
-            None
-        )
+        self._teardown: Callable[
+            [HierarchyObject], Awaitable[None]
+        ] | None = None
 
     @property
     def name(self) -> str:
@@ -127,7 +127,7 @@ class Testbench:
         """
 
         def decorator(
-            f: Callable[[HierarchyObject], Awaitable[None]]
+            f: Callable[[HierarchyObject], Awaitable[None]],
         ) -> Callable[[HierarchyObject], Awaitable[None]]:
             """Register the function as a cocotb test.
 
@@ -225,7 +225,7 @@ class Testbench:
         """
 
         def decorator(
-            f: Callable[[HierarchyObject], Awaitable[object]]
+            f: Callable[[HierarchyObject], Awaitable[object]],
         ) -> Callable[[HierarchyObject], Awaitable[object]]:
             """Make the decorated function a method of the testbench.
 
