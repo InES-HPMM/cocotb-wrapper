@@ -9,33 +9,35 @@
     };
   };
 
-  outputs = inputs@{ flake-parts, poetry2nix, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
-      perSystem = { config, pkgs, ... }:
+  outputs = { self, nixpkgs, poetry2nix }:
+    let
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
+      pkgs = forAllSystems (system: nixpkgs.legacyPackages.${system});
+    in
+    {
+      formatter = forAllSystems (system: pkgs.${system}.nixpkgs-fmt);
+      packages = forAllSystems (system:
         let
-          inherit (poetry2nix.lib.mkPoetry2Nix { inherit pkgs; }) mkPoetryApplication;
+          inherit (poetry2nix.lib.mkPoetry2Nix { pkgs = pkgs.${system}; }) mkPoetryApplication;
         in
         {
-          formatter = pkgs.nixpkgs-fmt;
-          packages = {
-            cocotb-wrapper = mkPoetryApplication {
-              projectDir = ./.;
-              preferWheels = true;
-            };
-            default = config.packages.cocotb-wrapper;
+          default = mkPoetryApplication { };
+        });
+      devShells = forAllSystems (system:
+        let
+          inherit (poetry2nix.lib.mkPoetry2Nix { pkgs = pkgs.${system}; }) mkPoetryEnv;
+        in
+        {
+          default = pkgs.${system}.mkShellNoCC {
+            name = "cocotb-wrapper";
+            packages = with pkgs.${system}; [
+              (mkPoetryEnv { projectDir = self; })
+              poetry
+              poetryPlugins.poetry-plugin-export
+              pre-commit
+            ];
           };
-          devShells = {
-            default = pkgs.mkShell {
-              name = "cocotb-wrapper";
-              packages = with pkgs; [ nodejs poetry poetryPlugins.poetry-plugin-export pre-commit ];
-            };
-          };
-        };
+        });
     };
 }
