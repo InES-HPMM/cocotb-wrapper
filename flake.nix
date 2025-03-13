@@ -48,7 +48,7 @@
         sourcePreference = "wheel";
       };
       pythonSet =
-        (pkgs.callPackage pyproject-nix.build.packages {
+        (pkgs.${system}.callPackage pyproject-nix.build.packages {
           inherit (pkgs.${system}) python3;
         })
         .overrideScope
@@ -75,7 +75,7 @@
             UV_PYTHON = pkgs.${system}.python3.interpreter;
           }
           // lib.optionalAttrs pkgs.${system}.stdenv.isLinux {
-            LD_LIBRARY_PATH = lib.makeLibraryPath pkgs.pythonManylinuxPackages.manylinux1;
+            LD_LIBRARY_PATH = lib.makeLibraryPath pkgs.${system}.pythonManylinuxPackages.manylinux1;
           };
         shellHook = ''
           unset PYTHONPATH
