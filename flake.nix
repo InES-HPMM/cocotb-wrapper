@@ -65,6 +65,7 @@
       default = pkgs.${system}.mkShell {
         name = "cocotb-wrapper";
         packages = with pkgs.${system}; [
+          just
           python3
           python3Packages.uv
         ];
