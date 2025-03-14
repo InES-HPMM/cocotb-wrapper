@@ -88,8 +88,9 @@ title = "Code Coverage of cocotb-wrapper"
 output = "report/coverage/coverage.xml"
 
 [tool.pyright]
-exclude = [
-  "^tests/",
+include = [
+  "^cocotb-wrapper/",
+  "^docs/",
 ]
 
 [tool.pytest.ini_options]

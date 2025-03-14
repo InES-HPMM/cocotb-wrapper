@@ -23,11 +23,12 @@ repos:
     hooks:
       - id: basedpyright
         additional_dependencies:
+          - cocotb
+          - cocotb-bus
+          - cocotbext-axi
+          - myst-parser
           - sphinx
-          - types-setuptools
-          - types-toml
-          - typing_extensions
-        exclude: tests/
+          - toml
   - repo: https://github.com/astral-sh/uv-pre-commit
     rev: 0.6.6
     hooks:
