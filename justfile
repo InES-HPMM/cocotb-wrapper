@@ -1,17 +1,24 @@
 build:
    uv build
 
-build-docs: sync-docs
+build-docs:
     uv run sphinx-build -a -b html docs/ docs/_build
 
-check: sync-all
+check:
     uv run basedpyright --level error
-    uv run ruff check
+    uv run ruff check --no-fix
+    uv run ruff format --check
+
+format:
     uv run ruff format
 
-sync-all:
+lint:
+    uv run ruff check
+    
+sync:
     uv sync --group dev --group docs
 
-sync-docs:
-    uv sync --group docs
+type-check:
+    uv run basedpyright
+    
 
