@@ -233,11 +233,11 @@ class AxiMaster:
             reset_active_level: 1 if active high 0 if active low
             max_burst_length: The maximum burst length in cycles (1 - 256).
         """
-        self._bus_prefix = bus_prefix
-        self._clk = clk
-        self._rst = rst
-        self._reset_active_level = reset_active_level
-        self._max_burst_length = max_burst_length
+        self._bus_prefix: str = bus_prefix
+        self._clk: str = clk
+        self._rst: str = rst
+        self._reset_active_level: int = reset_active_level
+        self._max_burst_length: int = max_burst_length
         self._log = SimLog(self._bus_prefix)
 
     def setup(self, dut: HierarchyObject) -> None:
@@ -250,8 +250,8 @@ class AxiMaster:
             AttributeError: If `dut` does not contain the handles of given with
                 `clk` and `rst`.
         """
-        self._bus = axi.AxiMaster(
-            bus=axi.AxiBus.from_prefix(dut, self._bus_prefix),
+        self._bus = axi.AxiMaster(  # pyright: ignore[reportAttributeAccessIssue,reportUninitializedInstanceVariable]
+            bus=axi.AxiBus.from_prefix(dut, self._bus_prefix),  # pyright: ignore[reportAttributeAccessIssue]
             clock=getattr(dut, self._clk),
             reset=getattr(dut, self._rst),
             reset_active_level=bool(self._reset_active_level),
@@ -272,7 +272,7 @@ class AxiMaster:
         region: int = 0,
         user: int = 0,
         wuser: int = 0,
-    ) -> axi.axi_master.AxiWriteResp:
+    ) -> axi.axi_master.AxiWriteResp:  # pyright: ignore[reportAttributeAccessIssue]
         """Write `data` to the `address`.
 
         Args:
@@ -321,7 +321,7 @@ class AxiMaster:
         region: int = 0,
         user: int = 0,
         wuser: int = 0,
-    ) -> axi.axi_master.AxiReadResp:
+    ) -> axi.axi_master.AxiReadResp:  #  pyright: ignore[reportAttributeAccessIssue]
         """Read `length` bytes from `address`.
 
         Args:
@@ -420,11 +420,11 @@ class AxiRam:
             reset_active_level: 1 if active high 0 if active low
             size: The memory size in bytes
         """
-        self._bus_prefix = bus_prefix
-        self._clk = clk
-        self._rst = rst
-        self._reset_active_level = bool(reset_active_level)
-        self._size = size
+        self._bus_prefix: str = bus_prefix
+        self._clk: str = clk
+        self._rst: str = rst
+        self._reset_active_level: int = bool(reset_active_level)
+        self._size: int = size
         self._log = SimLog(self._bus_prefix)
 
     def setup(self, dut: HierarchyObject) -> None:
@@ -437,8 +437,8 @@ class AxiRam:
             AttributeError: If `dut` does not contain the handles of given
                 with `clk` and `rst`.
         """
-        self._ram = axi.AxiRam(
-            bus=axi.AxiBus.from_prefix(dut, self._bus_prefix),
+        self._ram = axi.AxiRam(  # pyright: ignore[reportAttributeAccessIssue,reportUninitializedInstanceVariable]
+            bus=axi.AxiBus.from_prefix(dut, self._bus_prefix),  # pyright: ignore[reportAttributeAccessIssue]
             clock=getattr(dut, self._clk),
             reset=getattr(dut, self._rst),
             reset_active_level=self._reset_active_level,
@@ -562,10 +562,10 @@ class AxiLiteMaster:
             rst: The name of the reset
             reset_active_level: 1 if active high 0 if active low
         """
-        self._bus_prefix = bus_prefix
-        self._clk = clk
-        self._rst = rst
-        self._reset_active_level = reset_active_level
+        self._bus_prefix: str = bus_prefix
+        self._clk: str = clk
+        self._rst: str = rst
+        self._reset_active_level: int = reset_active_level
         self._log = SimLog(self._bus_prefix)
 
     def setup(self, dut: HierarchyObject) -> None:
@@ -578,8 +578,8 @@ class AxiLiteMaster:
             AttributeError: If `dut` does not contain the handles of given
                 with `clk` and `rst`.
         """
-        self._bus = axi.AxiLiteMaster(
-            bus=axi.AxiLiteBus.from_prefix(dut, self._bus_prefix),
+        self._bus = axi.AxiLiteMaster(  # pyright: ignore[reportAttributeAccessIssue,reportUninitializedInstanceVariable]
+            bus=axi.AxiLiteBus.from_prefix(dut, self._bus_prefix),  # pyright: ignore[reportAttributeAccessIssue]
             clock=getattr(dut, self._clk),
             reset=getattr(dut, self._rst),
             reset_active_level=bool(self._reset_active_level),
@@ -590,7 +590,7 @@ class AxiLiteMaster:
         address: int,
         data: bytes,
         prot: AxiProt = AxiProt.NONSECURE,
-    ) -> axi.axil_master.AxiLiteWriteResp:
+    ) -> axi.axil_master.AxiLiteWriteResp:  #  pyright: ignore[reportAttributeAccessIssue]
         """Write `data` to the `address`.
 
         Args:
@@ -608,7 +608,7 @@ class AxiLiteMaster:
         address: int,
         length: int,
         prot: AxiProt = AxiProt.NONSECURE,
-    ) -> axi.axil_master.AxiLiteReadResp:
+    ) -> axi.axil_master.AxiLiteReadResp:  #  pyright: ignore[reportAttributeAccessIssue]
         """Read `length` bytes from `address`.
 
         Args:
@@ -685,11 +685,11 @@ class AxiLiteRam:
             reset_active_level: 1 if active high 0 if active low
             size: The memory size in bytes
         """
-        self._bus_prefix = bus_prefix
-        self._clk = clk
-        self._rst = rst
-        self._reset_active_level = bool(reset_active_level)
-        self._size = size
+        self._bus_prefix: str = bus_prefix
+        self._clk: str = clk
+        self._rst: str = rst
+        self._reset_active_level: int = bool(reset_active_level)
+        self._size: int = size
         self._log = SimLog(self._bus_prefix)
 
     def setup(self, dut: HierarchyObject) -> None:
@@ -702,8 +702,8 @@ class AxiLiteRam:
             AttributeError: If `dut` does not contain the handles of given
                 with `clk` and `rst`.
         """
-        self._ram = axi.AxiLiteRam(
-            bus=axi.AxiLiteBus.from_prefix(dut, self._bus_prefix),
+        self._ram = axi.AxiLiteRam(  # pyright: ignore[reportAttributeAccessIssue,reportUninitializedInstanceVariable]
+            bus=axi.AxiLiteBus.from_prefix(dut, self._bus_prefix),  # pyright: ignore[reportAttributeAccessIssue]
             clock=getattr(dut, self._clk),
             reset=getattr(dut, self._rst),
             reset_active_level=self._reset_active_level,
@@ -829,11 +829,11 @@ class AxiStreamSource:
             rst: The name of the reset
             reset_active_level: 1 if active high 0 if active low
         """
-        self._bus_prefix = bus_prefix
-        self._tdata_width_bits = tdata_width_bits
-        self._clk = clk
-        self._rst = rst
-        self._reset_active_level = reset_active_level
+        self._bus_prefix: str = bus_prefix
+        self._tdata_width_bits: int = tdata_width_bits
+        self._clk: str = clk
+        self._rst: str = rst
+        self._reset_active_level: int = reset_active_level
         self._log = SimLog(self._bus_prefix)
 
     def setup(self, dut: HierarchyObject) -> None:
@@ -846,8 +846,8 @@ class AxiStreamSource:
             AttributeError: If `dut` does not contain the handles of given
                 with `clk` and `rst`.
         """
-        self._bus = axi.AxiStreamSource(
-            bus=axi.AxiStreamBus.from_prefix(dut, self._bus_prefix),
+        self._bus = axi.AxiStreamSource(  # pyright: ignore[reportAttributeAccessIssue,reportUninitializedInstanceVariable]
+            bus=axi.AxiStreamBus.from_prefix(dut, self._bus_prefix),  # pyright: ignore[reportAttributeAccessIssue]
             clock=getattr(dut, self._clk),
             reset=getattr(dut, self._rst),
             reset_active_level=bool(self._reset_active_level),
@@ -865,7 +865,7 @@ class AxiStreamSource:
                 completion of the frame transmission. The event gets triggered
                 when the frame has been transmitted
         """
-        frame = axi.AxiStreamFrame(frame_data, tx_complete=event)
+        frame = axi.AxiStreamFrame(frame_data, tx_complete=event)  # pyright: ignore[reportAttributeAccessIssue]
         await self._bus.write(frame)
 
     def set_pause_generator(self, generator: Iterator[int]) -> None:
@@ -910,11 +910,11 @@ class AxiStreamSink:
             rst: The name of the reset
             reset_active_level: 1 if active high 0 if active low
         """
-        self._bus_prefix = bus_prefix
-        self._tdata_width_bits = tdata_width_bits
-        self._clk = clk
-        self._rst = rst
-        self._reset_active_level = bool(reset_active_level)
+        self._bus_prefix: str = bus_prefix
+        self._tdata_width_bits: int = tdata_width_bits
+        self._clk: str = clk
+        self._rst: str = rst
+        self._reset_active_level: int = bool(reset_active_level)
         self._log = SimLog(self._bus_prefix)
 
     def setup(self, dut: HierarchyObject) -> None:
@@ -927,8 +927,8 @@ class AxiStreamSink:
             AttributeError: If `dut` does not contain the handles of given
                 with `clk` and `rst`.
         """
-        self._bus = axi.AxiStreamSink(
-            bus=axi.AxiStreamBus.from_prefix(dut, self._bus_prefix),
+        self._bus = axi.AxiStreamSink(  # pyright: ignore[reportAttributeAccessIssue,reportUninitializedInstanceVariable]
+            bus=axi.AxiStreamBus.from_prefix(dut, self._bus_prefix),  # pyright: ignore[reportAttributeAccessIssue]
             clock=getattr(dut, self._clk),
             reset=getattr(dut, self._rst),
             reset_active_level=self._reset_active_level,
@@ -976,8 +976,8 @@ class RandomAxiStreamPayloadGenerator:
             frame_length: The length of the frame
             data_width_bits: The width of each value in bits
         """
-        self._frame_length = frame_length
-        self._data_width_bits = data_width_bits
+        self._frame_length: int = frame_length
+        self._data_width_bits: int = data_width_bits
 
     def get_payload(self) -> bytes:
         """Get a random payload.

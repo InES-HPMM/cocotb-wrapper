@@ -24,7 +24,10 @@ from collections.abc import Awaitable
 from functools import wraps
 from typing import Callable
 
-from cocotb import start_soon, test
+from cocotb import (
+    start_soon,
+    test,  # pyright: ignore[reportAttributeAccessIssue]
+)
 from cocotb.clock import Clock
 from cocotb.handle import HierarchyObject
 from cocotb.log import SimLog
@@ -178,7 +181,7 @@ class Testbench:
             getattr(dut, self._rst).setimmediatevalue(
                 1 if self.reset_active_level else 0
             )
-            await Timer(time, units=units)
+            await Timer(time, units=units)  # pyright: ignore[reportArgumentType]
             getattr(dut, self._rst).value = 0 if self.reset_active_level else 1
             await RisingEdge(getattr(dut, self._rst))
             getattr(dut, self._rst)._log.debug("Reset complete")
@@ -186,7 +189,7 @@ class Testbench:
             self._log.debug("Reset not available")
 
     def start_clk(
-        self, dut: HierarchyObject, period: int, units: str | None
+        self, dut: HierarchyObject, period: int, units: str = "ns"
     ) -> None:
         """Start the clock.
 
