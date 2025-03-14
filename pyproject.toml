@@ -37,7 +37,6 @@ repository = "https://github.com/InES-HPMM/cocotb-wrapper"
 dev = [
     "basedpyright>=1.28.1",
     "coverage>=7.3.2",
-    "pre-commit>=3.5.0",
     "pytest>=7.4.3",
     "pytest-cov>=4.1.0",
     "pytest-sugar>=0.9.7",
@@ -89,8 +88,8 @@ output = "report/coverage/coverage.xml"
 
 [tool.pyright]
 include = [
-  "^cocotb-wrapper/",
-  "^docs/",
+  "cocotb_wrapper/",
+  "docs/",
 ]
 
 [tool.pytest.ini_options]
@@ -112,6 +111,9 @@ python_functions = "test_*"
 testpaths = "tests"
 
 [tool.ruff]
+exclude = [
+  "typings",
+]
 line-length = 80
 target-version = "py38"
 
