@@ -26,6 +26,6 @@ jobs:
       - name: Check types
         run: uv run basedpyright --level error
       - name: Lint files
-        run: uv run ruff check
+        run: uv run ruff check --no-fix
       - name: Format files
-        run: uv run ruff format
+        run: uv run ruff format --check
