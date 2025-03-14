@@ -89,8 +89,8 @@ output = "report/coverage/coverage.xml"
 
 [tool.pyright]
 include = [
-  "^cocotb-wrapper/",
-  "^docs/",
+  "cocotb_wrapper/",
+  "docs/",
 ]
 
 [tool.pytest.ini_options]
