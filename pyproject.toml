@@ -112,6 +112,9 @@ python_functions = "test_*"
 testpaths = "tests"
 
 [tool.ruff]
+exclude = [
+  "typings",
+]
 line-length = 80
 target-version = "py38"
 
