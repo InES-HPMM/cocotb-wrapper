@@ -19,12 +19,5 @@ to generate the documentation. You are now free to either run commands through
 
    uv venv
 
-Be sure to install `pre-commit <https://pre-commit.com/>`_ and the hooks before
-commiting anything.
-
-.. code-block:: bash
-
-   pre-commit install
-
-This automatically checks your code before a commit and makes sure that it
-complies with the rest of the code.
+Be sure to run checks before commiting anything by running `basedpyright`,
+`ruff check`, and `ruff format` manually, or by invoking `just check`.

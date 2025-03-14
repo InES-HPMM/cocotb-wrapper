@@ -67,7 +67,6 @@
         packages = with pkgs.${system}; [
           python3
           python3Packages.uv
-          pre-commit
         ];
         env =
           {
