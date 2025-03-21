@@ -3,10 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    alejandra = {
-      url = "github:kamadorueda/alejandra/3.1.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     pyproject-nix = {
       url = "github:pyproject-nix/pyproject.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +26,6 @@
 
   outputs = {
     nixpkgs,
-    alejandra,
     uv2nix,
     pyproject-nix,
     pyproject-build-systems,
@@ -41,7 +36,7 @@
     forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     pkgs = forAllSystems (system: nixpkgs.legacyPackages.${system});
   in {
-    formatter = forAllSystems (system: alejandra.defaultPackage.${system});
+    formatter = forAllSystems (system: pkgs.${system}.alejandra);
     packages = forAllSystems (system: let
       workspace = uv2nix.lib.workspace.loadWorkspace {workspaceRoot = ./.;};
       overlay = workspace.mkPyprojectOverlay {
