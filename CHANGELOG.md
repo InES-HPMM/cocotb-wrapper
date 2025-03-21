@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### 🚀 Features
+
+- Switch to uv as project manager
+- Format nix files with alejandra
+- Format files with ruff-format
+- Use pyright for static type checking
+- Use just instead of pre-commit hooks
+- Improve the justfile, adding more targets
+- Use alejandra from the nixpkgs input
+
+### 🐛 Bug Fixes
+
+- Cleanup flake
+- Format files
+- Correct pkgs calls
+- Resolve type check errors
+- Fix pyright include paths
+- Exclude the typings directory when linting
+- Install just into dev shell
+- Just check files without fixing them
+- Typo in check gh workflow
+
+### ⚙️ Miscellaneous Tasks
+
+- Update lock file
+- Remove the export of `LD_LIBRARY_PATH`
+- Remove `commitizen` from dev dependencies
+- Take account of non-nix systems
+- Update python packages
+- Update flake and flake structure
+- Update pyproject.toml
+- Update pre-commit hooks
+
 ## [1.1.2] - 2024-03-19
 
 ### 🚀 Features
@@ -15,6 +50,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Do not install python dependencies into the environment; instead use poetry environments
+- Bump to v1.1.2
 
 ## [1.1.1] - 2024-03-12
 

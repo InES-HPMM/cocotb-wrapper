@@ -20,4 +20,5 @@ to generate the documentation. You are now free to either run commands through
    uv venv
 
 Be sure to run checks before commiting anything by running `basedpyright`,
-`ruff check`, and `ruff format` manually, or by invoking `just check`.
+`ruff check`, and `ruff format` manually, or by invoking `just check` and
+`just fmt`.
