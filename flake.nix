@@ -44,7 +44,7 @@
       };
       pythonSet =
         (pkgs.${system}.callPackage pyproject-nix.build.packages {
-          inherit (pkgs.${system}) python3;
+          python = pkgs.${system}.python3;
         })
         .overrideScope
         (
