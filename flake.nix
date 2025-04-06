@@ -7,6 +7,7 @@
       url = "github:pyproject-nix/pyproject.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    treefmt-nix.url = "github:numtide/treefmt-nix";
     uv2nix = {
       url = "github:pyproject-nix/uv2nix";
       inputs = {
@@ -25,9 +26,11 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
-    uv2nix,
     pyproject-nix,
+    treefmt-nix,
+    uv2nix,
     pyproject-build-systems,
     ...
   }: let
@@ -35,8 +38,12 @@
     supportedSystems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
     forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     pkgs = forAllSystems (system: nixpkgs.legacyPackages.${system});
+    treefmt = forAllSystems (system: treefmt-nix.lib.evalModule pkgs.${system} ./treefmt.nix);
   in {
-    formatter = forAllSystems (system: pkgs.${system}.alejandra);
+    checks = forAllSystems (system: {
+      formatting = treefmt.${system}.config.build.check self;
+    });
+    formatter = forAllSystems (system: treefmt.${system}.config.build.wrapper);
     packages = forAllSystems (system: let
       workspace = uv2nix.lib.workspace.loadWorkspace {workspaceRoot = ./.;};
       overlay = workspace.mkPyprojectOverlay {
@@ -61,6 +68,7 @@
         name = "cocotb-wrapper";
         packages = with pkgs.${system}; [
           just
+          nodePackages.prettier
           python3
           python3Packages.uv
         ];
