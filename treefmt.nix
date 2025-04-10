@@ -8,6 +8,12 @@
   settings.global.excludes = [
     ".cache/**"
     ".direnv/**"
+    ".env/**"
+    ".git/**"
     ".jj/**"
+    ".venv/**"
+    ".ruff_cache/**"
+    ".svn/**"
+    "build/**"
   ];
 }
