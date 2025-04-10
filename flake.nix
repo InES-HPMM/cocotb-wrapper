@@ -39,12 +39,12 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = (import nixpkgs) {inherit system;};
       inherit (pkgs) lib;
-      treefmt = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
+      treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
     in {
       checks = {
-        formatting = treefmt.config.build.check self;
+        formatting = treefmtEval.config.build.check self;
       };
-      formatter = treefmt.config.build.wrapper;
+      formatter = treefmtEval.config.build.wrapper;
       packages = let
         workspace = uv2nix.lib.workspace.loadWorkspace {workspaceRoot = ./.;};
         overlay = workspace.mkPyprojectOverlay {
