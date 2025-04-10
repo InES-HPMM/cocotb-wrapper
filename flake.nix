@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
     pyproject-nix = {
       url = "github:pyproject-nix/pyproject.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,62 +29,64 @@
   outputs = {
     self,
     nixpkgs,
+    flake-utils,
     pyproject-nix,
     treefmt-nix,
     uv2nix,
     pyproject-build-systems,
     ...
-  }: let
-    inherit (nixpkgs) lib;
-    supportedSystems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
-    forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-    pkgs = forAllSystems (system: nixpkgs.legacyPackages.${system});
-    treefmt = forAllSystems (system: treefmt-nix.lib.evalModule pkgs.${system} ./treefmt.nix);
-  in {
-    checks = forAllSystems (system: {
-      formatting = treefmt.${system}.config.build.check self;
-    });
-    formatter = forAllSystems (system: treefmt.${system}.config.build.wrapper);
-    packages = forAllSystems (system: let
-      workspace = uv2nix.lib.workspace.loadWorkspace {workspaceRoot = ./.;};
-      overlay = workspace.mkPyprojectOverlay {
-        sourcePreference = "wheel";
+  }:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = (import nixpkgs) {
+        inherit system;
       };
-      pythonSet =
-        (pkgs.${system}.callPackage pyproject-nix.build.packages {
-          python = pkgs.${system}.python3;
-        })
-        .overrideScope
-        (
-          lib.composeManyExtensions [
-            pyproject-build-systems.overlays.default
-            overlay
-          ]
-        );
+      inherit (pkgs) lib;
+      treefmt = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
     in {
-      default = pythonSet.mkVirtualEnv "cocotb-wrapper" workspace.deps.default;
-    });
-    devShells = forAllSystems (system: {
-      default = pkgs.${system}.mkShell {
-        name = "cocotb-wrapper";
-        packages = with pkgs.${system}; [
-          just
-          nodePackages.prettier
-          python3
-          python3Packages.uv
-        ];
-        env =
-          {
-            UV_PYTHON_DOWNLOADS = "never";
-            UV_PYTHON = pkgs.${system}.python3.interpreter;
-          }
-          // lib.optionalAttrs pkgs.${system}.stdenv.isLinux {
-            LD_LIBRARY_PATH = lib.makeLibraryPath pkgs.${system}.pythonManylinuxPackages.manylinux1;
-          };
-        shellHook = ''
-          unset PYTHONPATH
-        '';
+      checks = {
+        formatting = treefmt.config.build.check self;
+      };
+      formatter = treefmt.config.build.wrapper;
+      packages = let
+        workspace = uv2nix.lib.workspace.loadWorkspace {workspaceRoot = ./.;};
+        overlay = workspace.mkPyprojectOverlay {
+          sourcePreference = "wheel";
+        };
+        pythonSet =
+          (pkgs.callPackage pyproject-nix.build.packages {
+            python = pkgs.python3;
+          })
+          .overrideScope
+          (
+            lib.composeManyExtensions [
+              pyproject-build-systems.overlays.default
+              overlay
+            ]
+          );
+      in {
+        default = pythonSet.mkVirtualEnv "cocotb-wrapper" workspace.deps.default;
+      };
+      devShells = {
+        default = pkgs.mkShell {
+          name = "cocotb-wrapper";
+          packages = with pkgs; [
+            just
+            nodePackages.prettier
+            python3
+            python3Packages.uv
+          ];
+          env =
+            {
+              UV_PYTHON_DOWNLOADS = "never";
+              UV_PYTHON = pkgs.python3.interpreter;
+            }
+            // lib.optionalAttrs pkgs.stdenv.isLinux {
+              LD_LIBRARY_PATH = lib.makeLibraryPath pkgs.pythonManylinuxPackages.manylinux1;
+            };
+          shellHook = ''
+            unset PYTHONPATH
+          '';
+        };
       };
     });
-  };
 }
